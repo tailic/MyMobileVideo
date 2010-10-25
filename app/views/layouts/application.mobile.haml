@@ -3,28 +3,44 @@
   %head
     %title MyMobileVideo
     = stylesheet_link_tag 'compiled/mobile.css' if mobile_device?
-    = stylesheet_link_tag '/jqtouch/jqtouch.min.css', '/jqtouch/themes/apple/theme.min.css'
-    = javascript_include_tag 'flowplayer-3.2.4.min.js', '/jqtouch/jquery.1.3.2.min.js', '/jqtouch/jqtouch.min.js', 'mobile'
+    = javascript_include_tag 'flowplayer-3.2.4.min.js'
     
     = csrf_meta_tag
   %body
-    .current
-      .toolbar
-        = link_to "Back", nil, :class => "back" unless current_page? root_path
-        %h1 MyMobileVideo
-        = link_to "Full Site", root_url(:mobile => 0), :class => "button", :rel => "external"
-      - unless flash.empty?
-        .info
-          - flash.each do |name,msg|
-            = content_tag :div, msg, :id => "flash_#{name}"
-      .content
-        .register-now
-          -if !user_signed_in?
-            Be a part of the future.
-            = link_to ' Sign up now!', new_user_registration_path, :class => "button"
-        = yield
-      .info
-        = link_to 'Über uns', '/about'
-        = raw('&nbsp;|&nbsp;')
-        = link_to 'Impressum', '/impressum'
+    #container
+      #header
+        = link_to 'MyMobileVideo', root_path, :id => 'logo'
+        %ul.social-links
+          %li= link_to 'twitter', 'http://twitter.com', :class => 'social-icon twitter'
+          %li= link_to 'facebook', 'http://facebook.com', :class => 'social-icon facebook'
+          %li= link_to 'rss', 'http://feed.com', :class => 'social-icon rss'
+        -if user_signed_in? && (current_user.role? :admin)
+          .admin-area
+            = link_to 'Adminbereich', admin_articles_path
+        - if user_signed_in?
+          .signed-in
+            = raw("Angemeldet als #{link_to current_user.email, current_user } | #{link_to 'Abmelden' , destroy_user_session_path}")
+
+      #center
+        .content
+          .register-now
+            -if ! user_signed_in?
+              Be a part of the future.
+              = link_to ' Sign up now!', new_user_registration_path
+          = yield
+      #sidebar
+        .content
+          - if user_signed_in?
+            = link_to "Video hochladen!", new_article_path, :id => "add-article-button"
+          = yield :sidebar
+      #footer
+        %ul.footer-links
+          %li= link_to 'Über uns', '/about'
+          %li= raw('&nbsp;|&nbsp;')
+          %li= link_to 'Impressum', '/impressum'
+          - if mobile_device?
+            %li= link_to "Normale Seite", :mobile => 0
+          - else
+            %li= link_to "Mobile Seite", :mobile => 1
+        .copyright= link_to raw('&copy; 2010 HAW Hamburg'), 'http://www.haw-hamburg.de/'
       
