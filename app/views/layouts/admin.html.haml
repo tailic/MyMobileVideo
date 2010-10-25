@@ -22,10 +22,6 @@
 
       #center
         .content
-          .register-now
-            -if ! user_signed_in?
-              Be a part of the future.
-              = link_to ' Sign up now!', new_user_registration_path
           = yield
       #sidebar
         .content

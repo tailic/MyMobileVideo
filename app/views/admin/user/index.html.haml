@@ -11,11 +11,11 @@
   %tbody
   - for user in @users
     %tr
-      %td= image_tag user.asset.url(:thumb)
-      %td= user.name
-      %td= user.email
-      %td= user.role
-      %td    
-        = link_to "Show", user_path(user)
-        = link_to "Edit User", edit_user_path(user)
-        = button_to "Delete User", user, :confirm => "Are you sure?", :method => :delete
+      %td{:width => '60px'}= image_tag user.asset.url(:thumb)
+      %td{:width => '150px'}= user.name
+      %td{:width => '180px'}= user.email
+      %td{:width => '60px'}= user.role
+      %td.options    
+        = link_to "", user_path(user), {:class => 'icon show', :title => 'Anzeigen'}
+        = link_to "", edit_user_path(user), {:class => 'icon edit', :title => 'Bearbeiten'}
+        = button_to "", user, :confirm => "Are you sure?", :method => :delete, :class => "icon delete"

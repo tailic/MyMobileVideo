@@ -2,15 +2,35 @@
   th
     color: white
     background: black
-    padding: 5px
+    padding: 10px 5px
+    font-size: 16px
   td
     padding: 5px
     background: $lighter-grey
+    border-bottom: 1px dotted $grey
     
-input.delete-button
-  +linear-gradient(color-stops($light-red, $light-red 33%, $red 67%))
-  border: 1px solid $red
-  &:hover
-    +linear-gradient(color-stops($red, $red 33%, $light-red 67%))
-    border: 1px solid $red
+.options
+  width: 100px
   
+input[type=submit].icon
+  width: 22px
+  height: 22px
+  border: 1px solid $grey
+  float: left
+  &.delete:hover
+    border: 1px solid $grey
+    background: $lighter-red image_url('icons/delete_16x16.gif') no-repeat 2px 2px
+.icon
+  +border-radius(4px)
+  width: 20px
+  height: 20px
+  border: 1px solid $grey
+  display: block
+  float: left
+  margin-right: 5px
+input.delete
+  background: white image_url('icons/delete_16x16.gif') no-repeat 2px 2px
+.edit
+  background: white image_url('icons/edit_16x16.gif') no-repeat 2px 2px
+.show
+  background: white image_url('icons/preview_16x16.gif') no-repeat 2px 2px
