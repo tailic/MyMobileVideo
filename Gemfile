@@ -12,6 +12,7 @@ gem 'hpricot'
 gem 'ruby_parser'
 gem 'nofxx-annotate'
 gem 'paperclip'
+gem 'delayed_job', '2.1.0.pre2'
 
 gem 'devise'
 gem 'cancan'

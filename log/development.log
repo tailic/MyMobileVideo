@@ -1816,3 +1816,490 @@ ActionController::RoutingError (No route matches "/assets/medium/missing.png"):
   
 
 Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (186.0ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW KEYS FROM `schema_migrations`
+  [1m[36mSQL (268.9ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+Migrating to CreateArticles (20100922193017)
+  [1m[36mSQL (161.9ms)[0m  [1mCREATE TABLE `articles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `body` text, `exclusive` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `schema_migrations`[0m
+  [1m[35mSQL (89.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20100922193017')
+Migrating to AddSessionsTable (20100922214136)
+  [1m[36mSQL (161.4ms)[0m  [1mCREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `session_id` varchar(255) NOT NULL, `data` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW KEYS FROM `sessions`
+  [1m[36mSQL (301.9ms)[0m  [1mCREATE INDEX `index_sessions_on_session_id` ON `sessions` (`session_id`)[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW KEYS FROM `sessions`
+  [1m[36mSQL (325.0ms)[0m  [1mCREATE INDEX `index_sessions_on_updated_at` ON `sessions` (`updated_at`)[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (46.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20100922214136')[0m
+Migrating to AddAttachmentAssetToArticle (20101003194839)
+  [1m[35mSQL (321.1ms)[0m  ALTER TABLE `articles` ADD `asset_file_name` varchar(255)
+  [1m[36mSQL (359.3ms)[0m  [1mALTER TABLE `articles` ADD `asset_content_type` varchar(255)[0m
+  [1m[35mSQL (291.9ms)[0m  ALTER TABLE `articles` ADD `asset_file_size` int(11)
+  [1m[36mSQL (314.0ms)[0m  [1mALTER TABLE `articles` ADD `asset_updated_at` datetime[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (58.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20101003194839')[0m
+Migrating to DeviseCreateUsers (20101005200746)
+  [1m[35mSQL (132.7ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(128) DEFAULT '' NOT NULL, `password_salt` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `remember_token` varchar(255), `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `users`[0m
+  [1m[35mSQL (279.6ms)[0m  CREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW KEYS FROM `users`[0m
+  [1m[35mSQL (357.8ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (58.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101005200746')
+Migrating to AddUserNameAndRoleToUser (20101011085304)
+  [1m[36mSQL (300.4ms)[0m  [1mALTER TABLE `users` ADD `name` varchar(255)[0m
+  [1m[35mSQL (358.7ms)[0m  ALTER TABLE `users` ADD `role` varchar(255) DEFAULT 'user'
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (57.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101011085304')
+Migrating to AddAttachmentAssetToUser (20101011133013)
+  [1m[36mSQL (300.3ms)[0m  [1mALTER TABLE `users` ADD `asset_file_name` varchar(255)[0m
+  [1m[35mSQL (358.8ms)[0m  ALTER TABLE `users` ADD `asset_content_type` varchar(255)
+  [1m[36mSQL (314.3ms)[0m  [1mALTER TABLE `users` ADD `asset_file_size` int(11)[0m
+  [1m[35mSQL (304.7ms)[0m  ALTER TABLE `users` ADD `asset_updated_at` datetime
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (47.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101011133013')
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `articles`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `articles`
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `sessions`[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW KEYS FROM `sessions`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('user@user.de')) LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  describe `users`
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `users` (`asset_content_type`, `asset_file_name`, `asset_file_size`, `asset_updated_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `password_salt`, `remember_created_at`, `remember_token`, `reset_password_token`, `role`, `sign_in_count`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2010-10-25 10:25:03', NULL, NULL, 'user@user.de', '$2a$10$ANNHy1MsdHFa8DvFulpwRe2HSX1Vix.Ij.Ky5ph0pTjRCf0g7Khqm', NULL, NULL, 'derUser', '$2a$10$ANNHy1MsdHFa8DvFulpwRe', NULL, NULL, NULL, 'user', 0, '2010-10-25 10:25:03')[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (60.5ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('admin@admin.de')) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`asset_content_type`, `asset_file_name`, `asset_file_size`, `asset_updated_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `name`, `password_salt`, `remember_created_at`, `remember_token`, `reset_password_token`, `role`, `sign_in_count`, `updated_at`) VALUES (NULL, NULL, NULL, NULL, '2010-10-25 10:25:04', NULL, NULL, 'admin@admin.de', '$2a$10$0sFIjiGR31K01XgL5mulpu3VFZ8ThYy7Jvl3oYrZitmyoIL7cLGLy', NULL, NULL, 'derAdmin', '$2a$10$0sFIjiGR31K01XgL5mulpu', NULL, NULL, NULL, 'admin', 0, '2010-10-25 10:25:04')[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (44.2ms)[0m  COMMIT
+  [1m[36mSQL (1.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateArticles (20100922193017)
+Migrating to AddSessionsTable (20100922214136)
+Migrating to AddAttachmentAssetToArticle (20101003194839)
+Migrating to DeviseCreateUsers (20101005200746)
+Migrating to AddUserNameAndRoleToUser (20101011085304)
+Migrating to AddAttachmentAssetToUser (20101011133013)
+Migrating to CreateDelayedJobs (20101025102525)
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (207.7ms)[0m  [1mCREATE TABLE `delayed_jobs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `priority` int(11) DEFAULT 0, `attempts` int(11) DEFAULT 0, `handler` text, `last_error` text, `run_at` datetime, `locked_at` datetime, `failed_at` datetime, `locked_by` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW KEYS FROM `delayed_jobs`
+  [1m[36mSQL (336.6ms)[0m  [1mCREATE INDEX `delayed_jobs_priority` ON `delayed_jobs` (`priority`, `run_at`)[0m
+  [1m[35mSQL (1.1ms)[0m  describe `schema_migrations`
+  [1m[36mSQL (82.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20101025102525')[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `articles`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `articles`
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `delayed_jobs`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `delayed_jobs`
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `sessions`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `sessions`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-25 12:26:19 +0200
+  Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.5ms)[0m  SELECT `articles`.* FROM `articles`
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE (exclusive = true) ORDER BY updated_at DESC LIMIT 2[0m
+Rendered shared/_sidebar_login.html.haml (31.8ms)
+Rendered articles/index.html.haml within layouts/application (62.4ms)
+Completed 200 OK in 95ms (Views: 70.6ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2010-10-25 12:26:33 +0200
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BnHGmSAEMtE31SMuAB5pHW+1S76AIDitUrz81y2XMPI=", "user"=>{"email"=>"admin@admin.de", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`email` = 'admin@admin.de') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `users` SET `current_sign_in_at` = '2010-10-25 10:26:34', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_at` = '2010-10-25 10:26:34', `last_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2010-10-25 10:26:34' WHERE (`users`.`id` = 2)
+[paperclip] Saving attachments.
+  [1m[36mSQL (75.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 390ms
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-25 12:26:34 +0200
+  Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT `articles`.* FROM `articles`
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE (exclusive = true) ORDER BY updated_at DESC LIMIT 2[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1
+Rendered shared/_sidebar_login.html.haml (56.6ms)
+Rendered articles/index.html.haml within layouts/application (83.9ms)
+Completed 200 OK in 114ms (Views: 92.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2010-10-25 12:26:36 +0200
+  Processing by ArticlesController#new as HTML
+Rendered articles/_form.html.haml (23.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+Rendered articles/new.html.haml within layouts/application (103.7ms)
+Completed 200 OK in 133ms (Views: 111.9ms | ActiveRecord: 73.6ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2010-10-25 12:26:52 +0200
+  Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BnHGmSAEMtE31SMuAB5pHW+1S76AIDitUrz81y2XMPI=", "article"=>{"title"=>"Test1", "body"=>"Test1", "exclusive"=>"0", "asset"=>#<File:/tmp/RackMultipart20101025-6120-1qjnzpd>}, "commit"=>"Artikel erstellen"}
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.3ms)[0m  [1mdescribe `articles`[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `articles` (`asset_content_type`, `asset_file_name`, `asset_file_size`, `asset_updated_at`, `body`, `created_at`, `exclusive`, `title`, `updated_at`) VALUES ('video/quicktime', 'sn.mov', 46521666, '2010-10-25 10:26:55', 'Test1', '2010-10-25 10:26:57', 0, 'Test1', '2010-10-25 10:26:57')
+[paperclip] Saving attachments.
+[paperclip] saving /home/daniel/Rails_Projects/MyMobileVideo/public/system/assets/1/original/sn.mov
+  [1m[36mSQL (86.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `delayed_jobs`[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `delayed_jobs` (`attempts`, `created_at`, `failed_at`, `handler`, `last_error`, `locked_at`, `locked_by`, `priority`, `run_at`, `updated_at`) VALUES (0, '2010-10-25 10:26:57', NULL, '--- !ruby/struct:Delayed::PerformableMethod \nobject: !ruby/ActiveRecord:Article \n attributes: \n title: Test1\n body: Test1\n exclusive: \"0\"\n created_at: &id001 2010-10-25 10:26:57.511408 Z\n updated_at: *id001\n asset_file_name: sn.mov\n asset_content_type: video/quicktime\n asset_file_size: 46521666\n asset_updated_at: 2010-10-25 10:26:55.344920 Z\n id: 1\nmethod: :convert\nargs: []\n\n', NULL, NULL, NULL, 0, '2010-10-25 10:26:57', '2010-10-25 10:26:57')
+  [1m[36mSQL (77.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles/1
+Completed 302 Found in 4651ms
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2010-10-25 12:26:57 +0200
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE (`articles`.`id` = 1) LIMIT 1
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT `articles`.* FROM `articles` LIMIT 5[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1
+Rendered shared/_sidebar_login.html.haml (5.2ms)
+Rendered shared/_sidebar_videos.html.haml (5.6ms)
+Rendered articles/show.html.haml within layouts/application (106.8ms)
+Completed 200 OK in 142ms (Views: 114.9ms | ActiveRecord: 102.4ms)
+  [1m[35mSQL (79.7ms)[0m  UPDATE `delayed_jobs` SET locked_at = '2010-10-25 10:26:58', locked_by = 'host:daniel-laptop pid:6233' WHERE (id = 1 and (locked_at is null or locked_at < '2010-10-25 06:26:58') and (run_at <= '2010-10-25 10:26:58'))
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE (`articles`.`id` = 1) LIMIT 1[0m
+testing the status of the current file sn.mov video/quicktime sn.mov sn.mov
+Trying to grab a screenshot from /home/daniel/Rails_Projects/MyMobileVideo/public/system/assets/1/original/sn.mov
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM `delayed_jobs` WHERE (`delayed_jobs`.`id` = 1)[0m
+  [1m[35mSQL (78.8ms)[0m  COMMIT
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2010-10-25 12:31:56 +0200
+  Processing by ArticlesController#new as HTML
+Rendered articles/_form.html.haml (23.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+Rendered articles/new.html.haml within layouts/application (100.6ms)
+Completed 200 OK in 129ms (Views: 108.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2010-10-25 12:32:06 +0200
+  Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BnHGmSAEMtE31SMuAB5pHW+1S76AIDitUrz81y2XMPI=", "article"=>{"title"=>"Test2", "body"=>"Test2", "exclusive"=>"0", "asset"=>#<File:/tmp/RackMultipart20101025-6120-oeqe1d>}, "commit"=>"Artikel erstellen"}
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `articles` (`asset_content_type`, `asset_file_name`, `asset_file_size`, `asset_updated_at`, `body`, `created_at`, `exclusive`, `title`, `updated_at`) VALUES ('video/quicktime', 'test.MOV', 5082573, '2010-10-25 10:32:07', 'Test2', '2010-10-25 10:32:07', 0, 'Test2', '2010-10-25 10:32:07')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/daniel/Rails_Projects/MyMobileVideo/public/system/assets/2/original/test.MOV
+  [1m[35mSQL (73.0ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO `delayed_jobs` (`attempts`, `created_at`, `failed_at`, `handler`, `last_error`, `locked_at`, `locked_by`, `priority`, `run_at`, `updated_at`) VALUES (0, '2010-10-25 10:32:07', NULL, '--- !ruby/struct:Delayed::PerformableMethod \nobject: !ruby/ActiveRecord:Article \n attributes: \n title: Test2\n body: Test2\n exclusive: \"0\"\n created_at: &id001 2010-10-25 10:32:07.714899 Z\n updated_at: *id001\n asset_file_name: test.MOV\n asset_content_type: video/quicktime\n asset_file_size: 5082573\n asset_updated_at: 2010-10-25 10:32:07.413058 Z\n id: 2\nmethod: :convert\nargs: []\n\n', NULL, NULL, NULL, 0, '2010-10-25 10:32:07', '2010-10-25 10:32:07')
+  [1m[36mSQL (67.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles/2
+Completed 302 Found in 841ms
+
+
+Started GET "/articles/2" for 127.0.0.1 at 2010-10-25 12:32:07 +0200
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mArticle Load (0.5ms)[0m  SELECT `articles`.* FROM `articles` WHERE (`articles`.`id` = 2) LIMIT 1
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` LIMIT 5[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1
+Rendered shared/_sidebar_login.html.haml (5.0ms)
+Rendered shared/_sidebar_videos.html.haml (7.4ms)
+Rendered articles/show.html.haml within layouts/application (111.8ms)
+Completed 200 OK in 152ms (Views: 120.4ms | ActiveRecord: 1.8ms)
+  [1m[36mSQL (56.5ms)[0m  [1mUPDATE `delayed_jobs` SET locked_at = '2010-10-25 10:32:11', locked_by = 'host:daniel-laptop pid:6233' WHERE (id = 2 and (locked_at is null or locked_at < '2010-10-25 06:32:11') and (run_at <= '2010-10-25 10:32:11'))[0m
+  [1m[35mArticle Load (0.3ms)[0m  SELECT `articles`.* FROM `articles` WHERE (`articles`.`id` = 2) LIMIT 1
+testing the status of the current file test.MOV video/quicktime test.MOV test.MOV
+Trying to grab a screenshot from /home/daniel/Rails_Projects/MyMobileVideo/public/system/assets/2/original/test.MOV
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM `delayed_jobs` WHERE (`delayed_jobs`.`id` = 2)
+  [1m[36mSQL (122.3ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2010-10-25 12:32:26 +0200
+  Processing by ArticlesController#new as HTML
+Rendered articles/_form.html.haml (23.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+Rendered articles/new.html.haml within layouts/application (190.2ms)
+Completed 200 OK in 220ms (Views: 198.5ms | ActiveRecord: 1.2ms)
+  [1m[35mSQL (0.4ms)[0m  UPDATE `delayed_jobs` SET locked_by = null, locked_at = null WHERE (locked_by = 'host:daniel-laptop pid:6233')
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2010-10-25 12:34:40 +0200
+  Processing by ArticlesController#new as HTML
+Rendered articles/_form.html.haml (25.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1
+Rendered articles/new.html.haml within layouts/application (184.2ms)
+Completed 200 OK in 213ms (Views: 192.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2010-10-25 12:34:51 +0200
+  Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BnHGmSAEMtE31SMuAB5pHW+1S76AIDitUrz81y2XMPI=", "article"=>{"title"=>"Test4", "body"=>"Test4", "exclusive"=>"0", "asset"=>#<File:/tmp/RackMultipart20101025-6386-8ri9ez>}, "commit"=>"Artikel erstellen"}
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  describe `articles`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `articles` (`asset_content_type`, `asset_file_name`, `asset_file_size`, `asset_updated_at`, `body`, `created_at`, `exclusive`, `title`, `updated_at`) VALUES ('video/quicktime', 'test.MOV', 5082573, '2010-10-25 10:34:52', 'Test4', '2010-10-25 10:34:52', 0, 'Test4', '2010-10-25 10:34:52')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/daniel/Rails_Projects/MyMobileVideo/public/system/assets/3/original/test.MOV
+  [1m[35mSQL (73.3ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  describe `delayed_jobs`
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `delayed_jobs` (`attempts`, `created_at`, `failed_at`, `handler`, `last_error`, `locked_at`, `locked_by`, `priority`, `run_at`, `updated_at`) VALUES (0, '2010-10-25 10:34:52', NULL, '--- !ruby/struct:Delayed::PerformableMethod \nobject: !ruby/ActiveRecord:Article \n attributes: \n title: Test4\n body: Test4\n exclusive: \"0\"\n created_at: &id001 2010-10-25 10:34:52.403527 Z\n updated_at: *id001\n asset_file_name: test.MOV\n asset_content_type: video/quicktime\n asset_file_size: 5082573\n asset_updated_at: 2010-10-25 10:34:52.026868 Z\n id: 3\nmethod: :convert\nargs: []\n\n', NULL, NULL, NULL, 0, '2010-10-25 10:34:52', '2010-10-25 10:34:52')[0m
+  [1m[35mSQL (88.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/articles/3
+Completed 302 Found in 975ms
+
+
+Started GET "/articles/3" for 127.0.0.1 at 2010-10-25 12:34:52 +0200
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE (`articles`.`id` = 3) LIMIT 1[0m
+  [1m[35mArticle Load (0.3ms)[0m  SELECT `articles`.* FROM `articles` LIMIT 5
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+Rendered shared/_sidebar_login.html.haml (5.0ms)
+Rendered shared/_sidebar_videos.html.haml (7.4ms)
+Rendered articles/show.html.haml within layouts/application (106.0ms)
+Completed 200 OK in 140ms (Views: 113.9ms | ActiveRecord: 2.0ms)
+  [1m[35mSQL (55.1ms)[0m  UPDATE `delayed_jobs` SET locked_at = '2010-10-25 10:34:55', locked_by = 'host:daniel-laptop pid:6389' WHERE (id = 3 and (locked_at is null or locked_at < '2010-10-25 06:34:55') and (run_at <= '2010-10-25 10:34:55'))
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE (`articles`.`id` = 3) LIMIT 1[0m
+testing the status of the current file test.MOV video/quicktime test.MOV test.MOV
+Trying to grab a screenshot from /home/daniel/Rails_Projects/MyMobileVideo/public/system/assets/3/original/test.MOV
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `delayed_jobs` WHERE (`delayed_jobs`.`id` = 3)[0m
+  [1m[35mSQL (289.9ms)[0m  COMMIT
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-25 12:36:02 +0200
+  Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.5ms)[0m  SELECT `articles`.* FROM `articles`
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE (exclusive = true) ORDER BY updated_at DESC LIMIT 2[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1
+Rendered shared/_sidebar_login.html.haml (58.3ms)
+Rendered articles/index.html.haml within layouts/application (103.5ms)
+Completed 200 OK in 136ms (Views: 111.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-25 12:36:05 +0200
+  Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT `articles`.* FROM `articles`[0m
+  [1m[35mArticle Load (0.1ms)[0m  SELECT `articles`.* FROM `articles` WHERE (exclusive = true) ORDER BY updated_at DESC LIMIT 2
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+Rendered shared/_sidebar_login.html.haml (62.2ms)
+Rendered articles/index.html.haml within layouts/application (110.0ms)
+Completed 200 OK in 142ms (Views: 117.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2010-10-25 12:37:20 +0200
+  Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.3ms)[0m  SELECT `articles`.* FROM `articles`
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE (exclusive = true) ORDER BY updated_at DESC LIMIT 2[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1
+Rendered shared/_sidebar_login.html.haml (133.5ms)
+Rendered articles/index.html.haml within layouts/application (180.2ms)
+Completed 200 OK in 212ms (Views: 188.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2010-10-25 12:37:21 +0200
+  Processing by ArticlesController#new as HTML
+Rendered articles/_form.html.haml (23.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+Rendered articles/new.html.haml within layouts/application (99.9ms)
+Completed 200 OK in 130ms (Views: 108.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2010-10-25 12:37:30 +0200
+  Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BnHGmSAEMtE31SMuAB5pHW+1S76AIDitUrz81y2XMPI=", "article"=>{"title"=>"Test", "body"=>"Test", "exclusive"=>"0", "asset"=>#<File:/tmp/RackMultipart20101025-6386-1m0xek>}, "commit"=>"Artikel erstellen"}
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `articles` (`asset_content_type`, `asset_file_name`, `asset_file_size`, `asset_updated_at`, `body`, `created_at`, `exclusive`, `title`, `updated_at`) VALUES ('video/quicktime', 'test.MOV', 5082573, '2010-10-25 10:37:30', 'Test', '2010-10-25 10:37:30', 0, 'Test', '2010-10-25 10:37:30')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/daniel/Rails_Projects/MyMobileVideo/public/system/assets/4/original/test.MOV
+  [1m[35mSQL (90.2ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO `delayed_jobs` (`attempts`, `created_at`, `failed_at`, `handler`, `last_error`, `locked_at`, `locked_by`, `priority`, `run_at`, `updated_at`) VALUES (0, '2010-10-25 10:37:31', NULL, '--- !ruby/struct:Delayed::PerformableMethod \nobject: !ruby/ActiveRecord:Article \n attributes: \n title: Test\n body: Test\n exclusive: \"0\"\n created_at: &id001 2010-10-25 10:37:30.939456 Z\n updated_at: *id001\n asset_file_name: test.MOV\n asset_content_type: video/quicktime\n asset_file_size: 5082573\n asset_updated_at: 2010-10-25 10:37:30.603069 Z\n id: 4\nmethod: :convert\nargs: []\n\n', NULL, NULL, NULL, 0, '2010-10-25 10:37:31', '2010-10-25 10:37:31')
+  [1m[36mSQL (44.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles/4
+Completed 302 Found in 840ms
+
+
+Started GET "/articles/4" for 127.0.0.1 at 2010-10-25 12:37:31 +0200
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mArticle Load (0.6ms)[0m  SELECT `articles`.* FROM `articles` WHERE (`articles`.`id` = 4) LIMIT 1
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` LIMIT 5[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1
+Rendered shared/_sidebar_login.html.haml (5.3ms)
+Rendered shared/_sidebar_videos.html.haml (8.1ms)
+Rendered articles/show.html.haml within layouts/application (111.6ms)
+Completed 200 OK in 146ms (Views: 120.2ms | ActiveRecord: 2.2ms)
+  [1m[36mSQL (64.4ms)[0m  [1mUPDATE `delayed_jobs` SET locked_at = '2010-10-25 10:37:33', locked_by = 'host:daniel-laptop pid:6389' WHERE (id = 4 and (locked_at is null or locked_at < '2010-10-25 06:37:33') and (run_at <= '2010-10-25 10:37:33'))[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT `articles`.* FROM `articles` WHERE (`articles`.`id` = 4) LIMIT 1
+testing the status of the current file test.MOV video/quicktime test.MOV test.MOV
+Trying to grab a screenshot from /home/daniel/Rails_Projects/MyMobileVideo/public/system/assets/4/original/test.MOV
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM `delayed_jobs` WHERE (`delayed_jobs`.`id` = 4)
+  [1m[36mSQL (89.0ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2010-10-25 12:39:59 +0200
+  Processing by ArticlesController#new as HTML
+Rendered articles/_form.html.haml (112.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+Rendered articles/new.html.haml within layouts/application (194.9ms)
+Completed 200 OK in 223ms (Views: 203.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2010-10-25 12:40:06 +0200
+  Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BnHGmSAEMtE31SMuAB5pHW+1S76AIDitUrz81y2XMPI=", "article"=>{"title"=>"asgd", "body"=>"dashf", "exclusive"=>"0", "asset"=>#<File:/tmp/RackMultipart20101025-6386-1r2yq7d>}, "commit"=>"Artikel erstellen"}
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `articles` (`asset_content_type`, `asset_file_name`, `asset_file_size`, `asset_updated_at`, `body`, `created_at`, `exclusive`, `title`, `updated_at`) VALUES ('video/quicktime', 'test.MOV', 5082573, '2010-10-25 10:40:06', 'dashf', '2010-10-25 10:40:07', 0, 'asgd', '2010-10-25 10:40:07')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/daniel/Rails_Projects/MyMobileVideo/public/system/assets/5/original/test.MOV
+  [1m[35mSQL (75.4ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO `delayed_jobs` (`attempts`, `created_at`, `failed_at`, `handler`, `last_error`, `locked_at`, `locked_by`, `priority`, `run_at`, `updated_at`) VALUES (0, '2010-10-25 10:40:07', NULL, '--- !ruby/struct:Delayed::PerformableMethod \nobject: !ruby/ActiveRecord:Article \n attributes: \n title: asgd\n body: dashf\n exclusive: \"0\"\n created_at: &id001 2010-10-25 10:40:07.209504 Z\n updated_at: *id001\n asset_file_name: test.MOV\n asset_content_type: video/quicktime\n asset_file_size: 5082573\n asset_updated_at: 2010-10-25 10:40:06.844224 Z\n id: 5\nmethod: :convert\nargs: []\n\n', NULL, NULL, NULL, 0, '2010-10-25 10:40:07', '2010-10-25 10:40:07')
+  [1m[36mSQL (56.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles/5
+Completed 302 Found in 858ms
+
+
+Started GET "/articles/5" for 127.0.0.1 at 2010-10-25 12:40:07 +0200
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mArticle Load (0.5ms)[0m  SELECT `articles`.* FROM `articles` WHERE (`articles`.`id` = 5) LIMIT 1
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` LIMIT 5[0m
+  [1m[35mSQL (75.6ms)[0m  UPDATE `delayed_jobs` SET locked_at = '2010-10-25 10:40:07', locked_by = 'host:daniel-laptop pid:6389' WHERE (id = 5 and (locked_at is null or locked_at < '2010-10-25 06:40:07') and (run_at <= '2010-10-25 10:40:07'))
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE (`articles`.`id` = 5) LIMIT 1[0m
+testing the status of the current file test.MOV video/quicktime test.MOV test.MOV
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1
+Rendered shared/_sidebar_login.html.haml (5.8ms)
+Rendered shared/_sidebar_videos.html.haml (12.9ms)
+Rendered articles/show.html.haml within layouts/application (273.5ms)
+Completed 200 OK in 311ms (Views: 282.0ms | ActiveRecord: 2.1ms)
+Trying to grab a screenshot from /home/daniel/Rails_Projects/MyMobileVideo/public/system/assets/5/original/test.MOV
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `delayed_jobs` WHERE (`delayed_jobs`.`id` = 5)[0m
+  [1m[35mSQL (77.9ms)[0m  COMMIT
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2010-10-25 12:41:44 +0200
+  Processing by ArticlesController#new as HTML
+Completed   in 11ms
+
+SyntaxError (/home/daniel/Rails_Projects/MyMobileVideo/app/models/article.rb:47: syntax error, unexpected tCONSTANT, expecting ')'
+    File.open(flv, 'w')
+        ^):
+  app/controllers/articles_controller.rb:24:in `new'
+
+Rendered /home/daniel/.rvm/gems/ruby-1.9.2-p0@msv/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+Rendered /home/daniel/.rvm/gems/ruby-1.9.2-p0@msv/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (225.5ms)
+Rendered /home/daniel/.rvm/gems/ruby-1.9.2-p0@msv/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (238.6ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2010-10-25 12:42:33 +0200
+  Processing by ArticlesController#new as HTML
+Rendered articles/_form.html.haml (23.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+Rendered articles/new.html.haml within layouts/application (103.4ms)
+Completed 200 OK in 132ms (Views: 111.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2010-10-25 12:42:38 +0200
+  Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BnHGmSAEMtE31SMuAB5pHW+1S76AIDitUrz81y2XMPI=", "article"=>{"title"=>"dfhsdhf", "body"=>"sdfh", "exclusive"=>"0", "asset"=>#<File:/tmp/RackMultipart20101025-6386-1f80sft>}, "commit"=>"Artikel erstellen"}
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `articles` (`asset_content_type`, `asset_file_name`, `asset_file_size`, `asset_updated_at`, `body`, `created_at`, `exclusive`, `title`, `updated_at`) VALUES ('video/quicktime', 'test.MOV', 5082573, '2010-10-25 10:42:39', 'sdfh', '2010-10-25 10:42:39', 0, 'dfhsdhf', '2010-10-25 10:42:39')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/daniel/Rails_Projects/MyMobileVideo/public/system/assets/6/original/test.MOV
+  [1m[35mSQL (71.4ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO `delayed_jobs` (`attempts`, `created_at`, `failed_at`, `handler`, `last_error`, `locked_at`, `locked_by`, `priority`, `run_at`, `updated_at`) VALUES (0, '2010-10-25 10:42:39', NULL, '--- !ruby/struct:Delayed::PerformableMethod \nobject: !ruby/ActiveRecord:Article \n attributes: \n title: dfhsdhf\n body: sdfh\n exclusive: \"0\"\n created_at: &id001 2010-10-25 10:42:39.745665 Z\n updated_at: *id001\n asset_file_name: test.MOV\n asset_content_type: video/quicktime\n asset_file_size: 5082573\n asset_updated_at: 2010-10-25 10:42:39.430770 Z\n id: 6\nmethod: :convert\nargs: []\n\n', NULL, NULL, NULL, 0, '2010-10-25 10:42:39', '2010-10-25 10:42:39')
+  [1m[36mSQL (46.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles/6
+Completed 302 Found in 813ms
+
+
+Started GET "/articles/6" for 127.0.0.1 at 2010-10-25 12:42:39 +0200
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE (`articles`.`id` = 6) LIMIT 1
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` LIMIT 5[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1
+Rendered shared/_sidebar_login.html.haml (5.4ms)
+Rendered shared/_sidebar_videos.html.haml (9.4ms)
+Rendered articles/show.html.haml within layouts/application (115.6ms)
+Completed 200 OK in 153ms (Views: 124.6ms | ActiveRecord: 2.0ms)
+  [1m[36mSQL (96.5ms)[0m  [1mUPDATE `delayed_jobs` SET locked_at = '2010-10-25 10:42:40', locked_by = 'host:daniel-laptop pid:6389' WHERE (id = 6 and (locked_at is null or locked_at < '2010-10-25 06:42:40') and (run_at <= '2010-10-25 10:42:40'))[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT `articles`.* FROM `articles` WHERE (`articles`.`id` = 6) LIMIT 1
+testing the status of the current file test.MOV video/quicktime test.MOV test.MOV
+Trying to grab a screenshot from /home/daniel/Rails_Projects/MyMobileVideo/public/system/assets/6/original/test.MOV
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM `delayed_jobs` WHERE (`delayed_jobs`.`id` = 6)
+  [1m[36mSQL (67.4ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2010-10-25 12:43:59 +0200
+  Processing by ArticlesController#new as HTML
+Rendered articles/_form.html.haml (22.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+Rendered articles/new.html.haml within layouts/application (183.6ms)
+Completed 200 OK in 211ms (Views: 191.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2010-10-25 12:44:07 +0200
+  Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BnHGmSAEMtE31SMuAB5pHW+1S76AIDitUrz81y2XMPI=", "article"=>{"title"=>"dfghdfg", "body"=>"dfjgdfj", "exclusive"=>"0", "asset"=>#<File:/tmp/RackMultipart20101025-6386-12ltycu>}, "commit"=>"Artikel erstellen"}
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `articles` (`asset_content_type`, `asset_file_name`, `asset_file_size`, `asset_updated_at`, `body`, `created_at`, `exclusive`, `title`, `updated_at`) VALUES ('video/quicktime', 'test.MOV', 5082573, '2010-10-25 10:44:07', 'dfjgdfj', '2010-10-25 10:44:08', 0, 'dfghdfg', '2010-10-25 10:44:08')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /home/daniel/Rails_Projects/MyMobileVideo/public/system/assets/7/original/test.MOV
+  [1m[35mSQL (70.1ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `delayed_jobs` (`attempts`, `created_at`, `failed_at`, `handler`, `last_error`, `locked_at`, `locked_by`, `priority`, `run_at`, `updated_at`) VALUES (0, '2010-10-25 10:44:08', NULL, '--- !ruby/struct:Delayed::PerformableMethod \nobject: !ruby/ActiveRecord:Article \n attributes: \n title: dfghdfg\n body: dfjgdfj\n exclusive: \"0\"\n created_at: &id001 2010-10-25 10:44:08.091598 Z\n updated_at: *id001\n asset_file_name: test.MOV\n asset_content_type: video/quicktime\n asset_file_size: 5082573\n asset_updated_at: 2010-10-25 10:44:07.734274 Z\n id: 7\nmethod: :convert\nargs: []\n\n', NULL, NULL, NULL, 0, '2010-10-25 10:44:08', '2010-10-25 10:44:08')
+  [1m[36mSQL (78.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles/7
+Completed 302 Found in 860ms
+
+
+Started GET "/articles/7" for 127.0.0.1 at 2010-10-25 12:44:08 +0200
+  Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mArticle Load (0.4ms)[0m  SELECT `articles`.* FROM `articles` WHERE (`articles`.`id` = 7) LIMIT 1
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT `articles`.* FROM `articles` LIMIT 5[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1
+Rendered shared/_sidebar_login.html.haml (5.0ms)
+Rendered shared/_sidebar_videos.html.haml (8.5ms)
+Rendered articles/show.html.haml within layouts/application (106.3ms)
+Completed 200 OK in 141ms (Views: 114.4ms | ActiveRecord: 1.8ms)
+  [1m[35mSQL (63.8ms)[0m  UPDATE `delayed_jobs` SET locked_at = '2010-10-25 10:44:09', locked_by = 'host:daniel-laptop pid:6389' WHERE (id = 7 and (locked_at is null or locked_at < '2010-10-25 06:44:09') and (run_at <= '2010-10-25 10:44:09'))
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT `articles`.* FROM `articles` WHERE (`articles`.`id` = 7) LIMIT 1[0m
+testing the status of the current file test.MOV video/quicktime test.MOV test.MOV
+Trying to grab a screenshot from /home/daniel/Rails_Projects/MyMobileVideo/public/system/assets/7/original/test.MOV
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `delayed_jobs` WHERE (`delayed_jobs`.`id` = 7)[0m
+  [1m[35mSQL (84.3ms)[0m  COMMIT
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `delayed_jobs` SET locked_by = null, locked_at = null WHERE (locked_by = 'host:daniel-laptop pid:6389')[0m
