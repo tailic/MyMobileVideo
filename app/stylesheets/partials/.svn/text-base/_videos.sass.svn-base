@@ -1,0 +1,83 @@
+.video
+  a
+    width: 600px
+    height: 380px
+    display: block
+    margin-bottom: 20px
+.description
+  padding: 5px
+  
+.sidebar-videos
+  li
+    overflow: hidden
+    border-bottom: 1px dotted $light-grey
+    padding-bottom: 5px
+    padding-top: 5px
+    &:last-child
+      border-bottom: none
+  .image
+    +float-left
+    width: 135px
+    height: 100px
+    background: black
+  .info
+    margin-left: 5px
+    width: 130px
+    +float-left
+
+.featured-videos
+  +clearfix
+  margin-bottom: 18px
+  li
+    +float-left
+    position: relative
+    &:first-child
+      margin-right: 20px
+  .video
+    overflow: hidden
+    margin-bottom: 0px
+    a
+      height: 200px
+      width: 290px
+      display: block
+      margin-bottom: 0px    
+  .info
+    line-height: 2em
+    background: rgba(0,0,0, 1)
+    width: 270px
+    padding: 0 10px
+    font-weight: bold
+    a
+      color: white
+      +text-shadow(#444)
+      &:hover
+        background: transparent
+      
+
+.new-videos
+  +clearfix
+  margin-bottom: 18px
+  li
+    +float-left
+    width: 135px
+    margin-right: 20px
+    margin-bottom: 10px
+    &:nth-child(4)
+      margin-right: 0px
+  .image
+    a
+      width: 135px
+      height: 100px
+      overflow: hidden
+      background: black
+      display: block
+  .info
+    width: 125px
+    padding: 5px
+    border-bottom: 1px dotted $light-grey
+    .title
+      height: 36px
+    .info
+      height: 18px
+  span
+    display: inline-block

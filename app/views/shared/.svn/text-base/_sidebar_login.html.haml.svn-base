@@ -1,0 +1,12 @@
+- unless user_signed_in?
+  .login
+    %h2 Hier anmelden
+    = form_tag new_user_session_path, :autocomplete => "off" do
+      .row
+        %label E-Mail:
+        = text_field_tag 'user[email]'
+      .row  
+        %label Passwort:
+        = password_field_tag 'user[password]'
+      %button Anmelden  
+      = link_to "Passwort vergessen?", new_password_path(User.new), :class => "forgot-password"

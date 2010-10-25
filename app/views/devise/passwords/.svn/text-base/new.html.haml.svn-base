@@ -1,0 +1,10 @@
+%h1 Hast du dein Passwort vergessen?
+= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+  = devise_error_messages!
+  .row
+    = f.label :email
+    = f.text_field :email
+  .row
+    = f.submit "Mein Passwort anfordern!"
+
+= render :partial => "devise/shared/links"

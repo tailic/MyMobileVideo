@@ -1,0 +1,47 @@
+!!!
+%html
+  %head
+    %title MyMobileVideo - Administration
+    = stylesheet_link_tag 'compiled/screen.css', :media => 'screen, projection'
+    = stylesheet_link_tag 'compiled/print.css', :media => 'print'
+    /[if lt IE 8]
+      = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
+    = javascript_include_tag :defaults
+    = javascript_include_tag 'flowplayer-3.2.4.min.js'
+    = csrf_meta_tag
+  %body
+    #container
+      #header
+        = link_to 'MyMobileVideo', root_path, :id => 'logo'
+        -if user_signed_in? && (current_user.role? :admin)
+          .admin-area
+            = link_to 'Adminbereich', admin_articles_path
+        - if user_signed_in?
+          .signed-in
+            = raw("Angemeldet als #{link_to current_user.email, current_user } | #{link_to 'Abmelden' , destroy_user_session_path}")
+
+      #center
+        .content
+          .register-now
+            -if ! user_signed_in?
+              Be a part of the future.
+              = link_to ' Sign up now!', new_user_registration_path
+          = yield
+      #sidebar
+        .content
+          %h1 Admin Navigation
+          %ul
+            %li= link_to 'Artikel bearbeiten','/admin/articles'
+            %li= link_to 'Benutzer bearbeiten','/admin/user'
+          = yield :sidebar
+      #footer
+        %ul.footer-links
+          %li= link_to 'Über uns', '/about'
+          %li= raw('&nbsp;|&nbsp;')
+          %li= link_to 'Impressum', '/impressum'
+        .copyright= link_to raw('&copy; 2010 HAW Hamburg'), 'http://www.haw-hamburg.de/'
+
+
+
+
+

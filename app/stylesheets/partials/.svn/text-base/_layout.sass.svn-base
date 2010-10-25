@@ -1,0 +1,114 @@
+// $blueprint-grid-columns: 24
+// $blueprint-container-size: 970px
+// $blueprint-grid-margin: 20px
+
+$grid_image = "/images/grid.png"
+
+
+#container
+  +container
+  //+box-shadow(#333, 0px, -1px, 2px)
+  // +showgrid($grid_image)
+#header, #footer
+  +column($blueprint-grid-columns, true)
+#sidebar
+  +column(8, true)
+  background: rgba(255, 255, 255, 1)
+  min-height: 600px
+
+#center
+  +column(16)
+  background: rgba(255, 255, 255, 1)
+  min-height: 600px
+
+#header
+  +linear-gradient(color-stops(#03a2f1, #03a2f1 33%, #097be4 67%))
+  +border-bottom-radius(5px)
+  +box-shadow(#444, 0px, 1px, 2px)
+  height: 110px
+  //background: rgba(255, 255, 255, 1)
+  position: relative
+  color: white
+.signed-in, .admin-area
+  position: absolute
+  top: 9px
+  right: 20px
+  a
+    color: white
+    border-bottom: 1px dotted white
+    &:visited
+      color: white
+    &:hover
+      background-color: black
+.admin-area
+  position: absolute
+  top: 9px
+  left: 20px
+  width: 200px
+  a, a:visited
+    color: $light-green
+    border-bottom: none
+    font-weight: bold
+    
+#logo
+  height: 100px
+  width: 400px
+  font-size: 42px
+  line-height: 100px
+  margin: 10px 20px
+  background: transparent image_url('mymobilevideo2.png') no-repeat top left
+  text-indent: 9000px
+  overflow: hidden
+  display: block
+.content
+  padding: 20px
+  
+.register-now
+  width: 560px
+  +border-radius(5px)
+  //+linear-gradient(color-stops(#03a2f1, #03a2f1 33%, #097be4 67%))
+  margin-bottom: 20px
+  font-size: 32px
+  line-height: 32px
+  color: #444
+    
+#footer
+  +border-top-radius(5px)
+  +box-shadow(#444, 0px, -1px, 2px)
+  height: 30px
+  line-height: 30px
+  background: rgba(9, 123, 228, 1)
+  a
+    color: #fff
+    border-bottom: 1px dotted white
+    &:hover
+      background-color: black
+.footer-links
+  +column(15)
+  +last
+  +horizontal-list
+  margin-left: 20px
+.copyright
+  +column(8)
+  +float-right
+  text-align: right
+.social-links
+  +horizontal-list
+  position: absolute
+  top: 36px
+  right: 20px
+.social-icon
+  width: 48px
+  height: 48px
+  display: block
+  text-indent: 9000px
+  &.facebook
+    background: transparent image_url('facebook_48.png') no-repeat top left
+  &.twitter
+    background: transparent image_url('twitter_48.png') no-repeat top left
+  &.rss
+    background: transparent image_url('feed_48.png') no-repeat top left
+    
+.login, .sidebar-videos
+  margin-bottom: 20px
+  

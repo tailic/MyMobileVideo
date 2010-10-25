@@ -1,0 +1,63 @@
+%h1 My Mobile Video in the Cloud
+%p Ziel des Projekts MyMobile Video in the Cloud ist die Entwicklung eines Videoportals a la YouTube für iPhones in einer selbstgebauten Cloud. In diesem intersziplinäre Projekt sollen Techniker die Cloud bauen, in PlanetLab weltweit aktivieren und überwachen, Serviceentwickler den Videodienst entwerfen und implementieren und Anwendungsentwickler den iPhone Cloud Client herstellen.
+
+%h2 Meetings &amp; Milestones
+%table.vertical.listing
+  %thead
+    %tr
+      %th Meeting
+      %th Milestone
+  %tbody
+    %tr
+      %td 27. 9.
+      %td Kickoff
+    %tr
+      %td 11. 10.
+      %td Konzepte fertig: Präsentation der Teams
+    %tr
+      %td 1. 11.
+      %td Mockup - erste Funktionsdemos der Teams
+    %tr
+      %td 22. 11.
+      %td Alpha-Prototypen
+    %tr
+      %td 13. 12.
+      %td Prototyp integriert und dokumentiert
+    %tr
+      %td 3.1.
+      %td Stabiler Beta-Prototyp, Feature Freeze
+    %tr
+      %td 17. 1.
+      %td Gemeinsame Abschlusspräsentation (System &amp; Doku)
+%p Die Treffen finden jeweils um 12:00 Uhr im Raum 765 statt. Alle Teams präsentieren hierbei ihren gegenwärtigen Stand, so dass wir gemeinsam über Fortschritt und weiteres Vorgehen diskutieren können.
+
+%h2 Die Teams und ihre Kernaufgaben
+
+%blockquote
+  %h4
+    Team Cloud Technik - Sprecher:
+  %p Installation, Konfiguration, Betrieb und Performance-Analyse einer Cloud-Umgebung auf Basis von Eucalyptus.
+  %p
+    Projektplan: s.
+    %a.external-link{:href => "https://inet.cpt.haw-hamburg.de/trac-cloud/wiki/AP-CloudTechnik"} Wiki
+%blockquote
+  %h4 Team Cloud Service - Sprecher:
+  %p Entwicklung des Video-Portals als Cloud-Applikation (EC2-API) mit elastischen Service-Eigenschaften.
+  %p
+    Projektplan: s.
+    %a.external-link{:href => "https://inet.cpt.haw-hamburg.de/trac-cloud/wiki/AP-CloudService"} Wiki
+%blockquote
+  %h4 Team iPhone Anwendung - Sprecher:
+  %p Entwurf und Implementierung einer iPhone Video-Anwendung zum Aufnehmen, Laden und Abspielen für den Cloud-Service.
+  %p
+    Projektplan: s.
+    %a.external-link{:href => "https://inet.cpt.haw-hamburg.de/trac-cloud/wiki/AP-iPhone"} Wiki
+
+%h2 Entwicklungstools:
+%p Software-Repository SVN: svn://inet.cpt.haw-hamburg.de/teaching/cloud
+%p
+  Trac &amp; Wiki:
+  %a.external-link{:href => "../../../trac-cloud"} http://inet.cpt.haw-hamburg.de/trac-cloud
+%p
+  Mailing-List:
+  %a.external-link{:href => "mailto:inet-cloud@googlegroups.com"} inet-cloud@googlegroups.com

@@ -1,0 +1,28 @@
+- unless @featured_articles.empty?
+  %h1 Featured Videos
+  %ol.featured-videos
+    - @featured_articles.each do |feature|
+      %li
+        .video
+          = link_to '', feature.asset.url, :id => "player_#{feature.id}"
+          %script
+            = "flowplayer('player_#{feature.id}', '/videos/flowplayer-3.2.5.swf', {clip:{autoPlay: false}});"
+            
+        .info
+          = link_to truncate(feature.title, :length => 40), feature
+
+%h1 Neue Videos
+%ol.new-videos
+  - @articles.each do |article|
+    %li
+      .image
+        = link_to '', article
+      .info
+        %span.title
+          = link_to truncate(article.title, :length => 30), article
+        %span.date
+          = l(article.created_at, :format => :custom)
+        = button_to "Delete Video", article, :confirm => "Are you sure?", :method => :delete
+
+- content_for :sidebar do
+  = render :partial => "shared/sidebar_login"

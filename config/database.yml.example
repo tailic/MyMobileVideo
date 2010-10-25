@@ -1,0 +1,29 @@
+development:
+  adapter: mysql
+  encoding: utf8
+  engine: MyISAM
+  database: msv_dev
+  pool: 5
+  username: root
+  password: 
+  host: localhost
+
+test:
+  adapter: mysql
+  encoding: utf8
+  engine: MyISAM
+  database: msv_test
+  pool: 5
+  username: root
+  password: 
+  host: localhost
+
+#production:
+#  adapter: mysql
+#  encoding: utf8
+#  engine: MyISAM
+#  database: msv_production
+#  pool: 5
+#  username: root
+#  password: 
+#  host: localhost

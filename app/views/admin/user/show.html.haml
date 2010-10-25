@@ -1,0 +1,43 @@
+%p#notice= notice
+- if @user.current_sign_in_at != @user.last_sign_in_at
+  %p
+    %b
+      User is online! 
+    %br 
+    Since 
+    = @user.current_sign_in_at
+    @
+    = @user.current_sign_in_ip
+%p
+  %b Anhang:
+  = image_tag @user.asset.url
+%p
+  %b ID:
+  = @user.id
+%p
+  %b Name:
+  = @user.name
+%p
+  %b Body:
+  = @user.email
+%p
+  %b Role:
+  = @user.role
+%p
+  %b Sign in:
+  = @user.sign_in_count
+%p
+  %b Created at:
+  = @user.created_at
+%p
+  %b Last Sign in:
+  = @user.last_sign_in_at
+  @
+  = @user.last_sign_in_ip
+    
+
+%p
+  - if can? :update, @user
+    = link_to 'Edit', edit_admin_user_path(@user)
+  |
+  \#{link_to 'Back', admin_user_path}

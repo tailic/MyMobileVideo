@@ -1,0 +1,29 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  engine: MyISAM
+  database: service_devel
+  pool: 5
+user:root
+  host: 
+socket: /var/run/mysqld/mysqld.sock
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  engine: MyISAM
+  database: service_test
+  pool: 5
+user:root
+  host: 
+socket: /var/run/mysqld/mysqld.sock
+
+#production:
+#  adapter: mysql2
+#  encoding: utf8
+#  engine: MyISAM
+#  database: msv_production
+#  pool: 5
+#  username: root
+#  password: 
+#  host: /var/run/mysqld/mysqld.sock

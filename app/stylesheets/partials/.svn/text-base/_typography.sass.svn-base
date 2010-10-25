@@ -1,0 +1,116 @@
+body
+  background-color: #fff
+  color: #333
+  font-family: helvetica, arial, sans-serif
+  font-size: 13px
+  line-height: 18px
+  
+ol, ul
+  +reset-list-style
+
+pre
+  background-color: #eee
+  padding: 10px
+  font-size: 11px
+
+a
+  color: $blue
+  text-decoration: none
+  &:visited
+    color: $blue
+  &:hover
+    color: $blue
+    background-color: $lighter-blue
+    
+.register-now
+
+
+div
+  &.field, &.actions
+    margin-bottom: 10px
+
+#notice
+  color: green
+
+.field_with_errors
+  padding: 2px
+  background-color: red
+  display: table
+
+#error_explanation
+  width: 450px
+  border: 2px solid red
+  padding: 0px
+  padding-bottom: 0
+  margin-bottom: 20px
+  background-color: #f0f0f0
+  h2
+    display: none
+    
+p
+  margin-bottom: 18px
+
+=h1
+  font-size: 24px
+  margin-bottom: 10px
+  border-bottom: 1px solid $grey
+  padding-bottom: 9px
+  line-height: 1em
+
+=h2
+  font-size: 18px
+  margin-bottom: 10px
+
+=h3
+  font-size: 16px
+  margin-bottom: 10px
+
+=h4
+  font-size: 13px
+  font-weight: bold
+  color: $grey
+  margin-bottom: 10px
+
+=h5
+  font-size: 13px
+  font-weight: bold
+  color: $grey
+  margin-bottom: 10px
+  
+=h6
+  font-size: 13px
+  font-weight: bold
+  color: $grey
+  margin-bottom: 10px
+  
+    
+h1
+  +h1
+h2
+  +h2
+  overflow: hidden
+  span
+    +float-left
+  a
+    +float-right
+    font-size: 12px
+    line-height: 1.5em
+    font-weight: bold
+h3
+  +h3
+h4
+  +h4
+h5
+  +h5
+h6
+  +h6
+
+#add-article-button
+  font-size: 24px
+  display: block
+  width: 270px
+  text-align: center
+  line-height: 1.5em
+  +linear-gradient(color-stops($light-green, $green 33%, $dark-green 67%))
+  border-color: $dark-green
+  margin-bottom: 20px

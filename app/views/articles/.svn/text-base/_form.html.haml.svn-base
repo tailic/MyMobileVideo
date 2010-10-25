@@ -1,0 +1,23 @@
+= form_for(@article, :html => { :multipart => :true }) do |f|
+  - if @article.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@article.errors.count, "error")
+        prohibited this article from being saved:
+      %ul
+        - @article.errors.full_messages.each do |msg|
+          %li= msg
+  .row
+    = f.label :title
+    = f.text_field :title
+  .row
+    = f.label :body
+    = f.text_area :body
+  .row
+    = f.label :exclusive
+    = f.check_box :exclusive
+  .row
+    = f.label :asset
+    = f.file_field :asset
+  .actions
+    = f.submit

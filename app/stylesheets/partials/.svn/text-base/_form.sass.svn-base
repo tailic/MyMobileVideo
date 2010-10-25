@@ -1,0 +1,45 @@
+#user_new
+  padding: 20px
+#sidebar
+  label
+    width: 70px
+    display: inline-block
+input[type=text], input[type=password]
+  border: 1px solid #ddd
+  width: 180px
+  font-size: 13px
+  line-height: 18px
+  height: 22px
+  
+input[type=text]:focus, input[type=password]:focus
+  border: 1px solid $blue
+  background: $lighter-blue
+  outline: none
+
+button, input[type=submit], #add-article-button
+  +border-radius(5px)
+  +linear-gradient(color-stops($light-blue, $light-blue 33%, $blue 67%))
+  +text-shadow(#444, 0px, 1px, 1px)
+  line-height: 18px
+  color: white
+  font-weight: bold
+  padding: 3px 8px
+  font-size: 13px
+  border: 1px solid $blue
+  cursor: pointer
+  &:hover
+    +linear-gradient(color-stops($blue, $blue 33%, $light-blue 67%))
+    border: 1px solid $blue
+.row
+  margin-bottom: 9px
+  overflow: hidden
+  
+.forgot-password
+  margin-left: 10px
+  
+.content
+  label
+    +column(4)
+    line-height: 2em
+  input[type=text], input[type=password]
+    +column(6, true)
