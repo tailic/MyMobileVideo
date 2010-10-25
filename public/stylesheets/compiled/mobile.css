@@ -1,4 +1,220 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\000031}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\000034}}
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\000036}}
+html {
+  font-size: 100.01%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\0000316}}
+div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+pre, a, abbr, acronym, address, code, del, dfn, em, img,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\0000318}}
+blockquote, q {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  quotes: "" "";
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\0000345}}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\0000320}}
+th, td, caption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\0000322}}
+table {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\0000324}}
+a img {
+  border: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000314}}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000317}}
 body {
-  background: black;
+  line-height: 1;
+  color: black;
+  background: white;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000319}}
+ol, ul {
+  list-style: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000321}}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000323}}
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000325}}
+q, blockquote {
+  quotes: "" "";
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000396}}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000327}}
+a img {
+  border: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\000039}}
+body {
+  background-color: white;
+  color: #333333;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 62px;
+  line-height: 1.2em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000350}}
+h1 {
+  font-size: 82px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #999999;
+  padding-bottom: 9px;
+  line-height: 1em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000352}}
+h2 {
+  font-size: 72px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000355}}
+h2 span {
+  display: inline;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000357}}
+h2 a {
+  display: inline;
+  float: right;
+  font-size: 12px;
+  line-height: 1.5em;
+  font-weight: bold;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000362}}
+h3 {
+  font-size: 62px;
+  margin-bottom: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000364}}
+h4 {
+  font-size: 62px;
+  font-weight: bold;
+  color: #999999;
+  margin-bottom: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000366}}
+h5 {
+  font-size: 62px;
+  font-weight: bold;
+  color: #999999;
+  margin-bottom: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000368}}
+h6 {
+  font-size: 62px;
+  font-weight: bold;
+  color: #999999;
+  margin-bottom: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000371}}
+ol, ul {
+  list-style: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000374}}
+#container {
+  padding: 50px;
 }

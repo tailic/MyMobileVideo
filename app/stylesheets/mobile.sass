@@ -1,2 +1,75 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import blueprint/reset
+@import compass/reset
+@import compass/utilities
+@import compass/css3
+
+@import partials/colors
+
 body
-  background: black
+  background-color: #fff
+  color: #333
+  font-family: helvetica, arial, sans-serif
+  font-size: 62px
+  line-height: 1.2em
+  
+=h1
+  font-size: 82px
+  margin-bottom: 10px
+  border-bottom: 1px solid $grey
+  padding-bottom: 9px
+  line-height: 1em
+
+=h2
+  font-size: 72px
+  margin-bottom: 10px
+
+=h3
+  font-size: 62px
+  margin-bottom: 10px
+
+=h4
+  font-size: 62px
+  font-weight: bold
+  color: $grey
+  margin-bottom: 10px
+
+=h5
+  font-size: 62px
+  font-weight: bold
+  color: $grey
+  margin-bottom: 10px
+
+=h6
+  font-size: 62px
+  font-weight: bold
+  color: $grey
+  margin-bottom: 10px
+
+
+h1
+  +h1
+h2
+  +h2
+  overflow: hidden
+  span
+    +float-left
+  a
+    +float-right
+    font-size: 12px
+    line-height: 1.5em
+    font-weight: bold
+h3
+  +h3
+h4
+  +h4
+h5
+  +h5
+h6
+  +h6
+    
+ol, ul
+  +reset-list-style
+
+#container
+  padding: 50px
