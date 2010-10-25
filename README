@@ -1,7 +1,8 @@
-new soccer club app with rails 3
+* HAW Projekt WS10/11 *
+Video Portal mit mobiler Anbindung
 
-Anleitung zum Starten des Workers, der die Convertierung übernimmt:
-
+** Starten des Convertierungs Worker **
 rake jobs:work
 
-Damit wird ein Hintergrundprozess gestartet, dem dann die Convertierungsarbeit übergeben wird.
+** Install requirements **
+ffmpeg has to be installed

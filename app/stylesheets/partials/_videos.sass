@@ -16,10 +16,13 @@
     &:last-child
       border-bottom: none
   .image
-    +float-left
-    width: 135px
-    height: 100px
-    background: black
+    a
+      +float-left
+      width: 135px
+      height: 100px
+      overflow: hidden
+      +linear-gradient(color-stops($lighter-grey, $lighter-grey 33%, $light-grey 67%))
+      display: block
   .info
     margin-left: 5px
     width: 130px
@@ -43,15 +46,9 @@
       margin-bottom: 0px    
   .info
     line-height: 2em
-    background: rgba(0,0,0, 1)
     width: 270px
-    padding: 0 10px
+    padding: 5px 10px
     font-weight: bold
-    a
-      color: white
-      +text-shadow(#444)
-      &:hover
-        background: transparent
       
 
 .new-videos
@@ -69,7 +66,7 @@
       width: 135px
       height: 100px
       overflow: hidden
-      background: black
+      +linear-gradient(color-stops($lighter-grey, $lighter-grey 33%, $light-grey 67%))
       display: block
   .info
     width: 125px
@@ -77,7 +74,9 @@
     border-bottom: 1px dotted $light-grey
     .title
       height: 36px
+      width: 125px
     .info
       height: 18px
+      width: 125px
   span
     display: inline-block

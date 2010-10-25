@@ -2,10 +2,10 @@
   %h2 
     %span Aktuelle Videos
     = link_to 'mehr videos', root_path
-
   %ol
     - articles.each do |article|
       %li
         .image
+          = link_to image_tag(get_asset_thumb(article.asset.url, article.asset.original_filename, "thumb"),:alt => "#{article.asset.original_filename}", :title => "#{article.asset.original_filename}"), article
         .info
           = link_to truncate(article.title, :length => 80), article

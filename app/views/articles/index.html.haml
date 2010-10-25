@@ -4,16 +4,18 @@
     - @featured_articles.each do |feature|
       %li
         .video
-          = link_to '', feature.asset.url, :id => "player_#{feature.id}"
+          = link_to image_tag(get_asset_thumb(feature.asset.url, feature.asset.original_filename, "medium")), feature.asset.url, :id => "player_#{feature.id}"
           %script
             = "flowplayer('player_#{feature.id}', '/videos/flowplayer-3.2.5.swf', {clip:{autoPlay: false}});"
+        .info
+          = link_to truncate(feature.title, :length => 40), feature
             
 %h1 Neue Videos
 %ol.new-videos
   - @articles.each do |article|
-    %li
+    %li{:title => "#{article.title}"}
       .image
-        = link_to '', article
+        = link_to image_tag(get_asset_thumb(article.asset.url, article.asset.original_filename, "thumb"),:alt => "#{article.asset.original_filename}", :title => "#{article.asset.original_filename}"), article
       .info
         %span.title
           = link_to truncate(article.title, :length => 30), article
