@@ -23,40 +23,16 @@ class Article < ActiveRecord::Base
  # validates_attachment_presence :asset
   #validates_attachment_content_type :asset, :content_type => 'video/quicktime'
 
+  # This method creates the ffmpeg command that we'll be using
   def convert
     logger.debug "testing the status of the current file #{self.asset_file_name} #{self.asset_content_type} #{self.asset_file_name} #{self.asset_file_name}"
-    if movie?
-      success = system(convert_command)
-      grab_screenshot_from_video
-    end
-  end
- 
-  def movie?
-    if self.asset_content_type == "image/jpeg"
-      false
-    else
-      true
-    end
+    flv = File.join(File.dirname(asset.path), "#{self.asset_file_name.gsub(".mov",'').gsub(".mp4",'').gsub(".MOV",'').gsub(".MP4",'').gsub(".avi",'').gsub(".AVI",'').gsub(".FLV",'')}.flv")
+    File.open(flv, 'w')
+    system "ffmpeg -i #{ asset.path }  -ar 22050 -ab 192000 -s 480x360 -vcodec flv -r 25 -qscale 8 -f flv -y #{ flv }"
+    grab_screenshot_from_video
   end
  
   private
- 
-  # This method creates the ffmpeg command that we'll be using
-  def convert_command
-    flv = File.join(File.dirname(asset.path), "#{self.asset_file_name}.flv")
-    File.open(flv, 'w')
-
-    command = <<-end_command
-      ffmpeg -i #{ asset.path }  -ar 22050 -ab 192000 -s 480x360 -vcodec flv -r 25 -qscale 8 -f flv -y #{ flv }
-    end_command
-    command.gsub!(/\s+/, " ")
-  end
-  
-
-  # This update the stored filename with the new flash video file
-  def set_new_filename
-    update_attribute(:asset_file_name, "#{self.asset_file_name.gsub(".mov",'').gsub(".mp4",'').gsub(".MOV",'').gsub(".MP4",'').gsub(".avi",'').gsub(".AVI",'').gsub(".flv",'').gsub(".FLV",'')}.flv")
-  end
 
   def grab_screenshot_from_video
     logger.debug "Trying to grab a screenshot from #{asset.path}"
@@ -67,4 +43,5 @@ class Article < ActiveRecord::Base
     File.open(flv, 'w')
     system "ffmpeg -i #{ asset.path } -s 135x100 -vframes 1 -f image2 -an #{flv}"
   end
+
 end

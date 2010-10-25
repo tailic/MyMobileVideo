@@ -7,13 +7,7 @@ class UserController < ApplicationController
     foo("1")
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render :json => @users.to_json(:only => [ :id,
-                                                             :email,
-                                                             :name,
-                                                             :current_sign_in_at,
-                                                             :current_sign_in_ip,
-                                                             :role]) 
-                  }
+      format.json { render :partial => 'user/index.json'} 
     end
   end
 
@@ -42,15 +36,11 @@ class UserController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.haml
-      format.json { render :json => @user.to_json(:only => [ :id,
-                                                             :email,
-                                                             :name,
-                                                             :current_sign_in_at,
-                                                             :current_sign_in_ip,
-                                                             :role])
-		  }
+      format.json {render :partial => "user/show.json"}
     end
   end
+  
+
   
   
   
