@@ -1,9 +1,21 @@
 %h1= t('.title')
-- for user in @users
-  = image_tag user.asset.url(:medium)
-  = user.name
-  = user.email
-  = user.role
-  = link_to "Show", user_path(user)
-  = link_to "Edit User", edit_user_path(user)
-  = button_to "Delete User", user, :confirm => "Are you sure?", :method => :delete
+
+%table.admin-table
+  %thead
+    %tr
+      %th Avatar
+      %th Name
+      %th E-Mail
+      %th Role
+      %th Optionen
+  %tbody
+  - for user in @users
+    %tr
+      %td= image_tag user.asset.url(:thumb)
+      %td= user.name
+      %td= user.email
+      %td= user.role
+      %td    
+        = link_to "Show", user_path(user)
+        = link_to "Edit User", edit_user_path(user)
+        = button_to "Delete User", user, :confirm => "Are you sure?", :method => :delete

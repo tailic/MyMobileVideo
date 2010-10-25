@@ -163,6 +163,13 @@ de:
     submit:
       create: "%{model} erstellen"
       update: "%{model} updaten"
+  admin:
+    user:
+      index:
+        title: "Benutzer Verwaltung"
+    articles:
+      index:
+        title: "Artikel Verwaltung"
   articles:
     index:
       title: "Neuste Videos"
