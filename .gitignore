@@ -1,6 +1,6 @@
 database.yml
 tmp
-log
+development.log
 svnignores.txt
 Gemfile.lock
 .svn
