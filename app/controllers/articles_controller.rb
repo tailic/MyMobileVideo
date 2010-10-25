@@ -1,18 +1,12 @@
 class ArticlesController < ApplicationController
   def index
     @articles = Article.all
-    @featured_articles = Article.find(:all, :conditions => "exclusive = true", :limit => 2, :order => "updated_at DESC")
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @articles }
-    end
+    @featured_articles = Article.find(:all, :conditions => "exclusive = true", :limit => 2, :order => "updated_at DESC")    
   end
 
   def show
     @article = Article.find(params[:id])
     @articles = Article.all(:limit => 5)
-    
 
     respond_to do |format|
       format.html # show.html.erb
