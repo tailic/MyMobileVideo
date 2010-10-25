@@ -1,1 +1,7 @@
 new soccer club app with rails 3
+
+Anleitung zum Starten des Workers, der die Convertierung übernimmt:
+
+rake jobs:work
+
+Damit wird ein Hintergrundprozess gestartet, dem dann die Convertierungsarbeit übergeben wird.

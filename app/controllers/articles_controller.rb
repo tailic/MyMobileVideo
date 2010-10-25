@@ -38,7 +38,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        @article.convert
+        @article.delay.convert
         format.html { redirect_to(@article, :notice => 'Article was successfully created.') }
         format.xml  { render :xml => @article, :status => :created, :location => @article }
       else

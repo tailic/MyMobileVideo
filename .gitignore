@@ -6,3 +6,5 @@ svnignores.txt
 Gemfile.lock
 .svn
 .redcar
+.rvmrc
+assets

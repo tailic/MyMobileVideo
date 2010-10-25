@@ -55,7 +55,7 @@ class Article < ActiveRecord::Base
 
   # This update the stored filename with the new flash video file
   def set_new_filename
-    update_attribute(:asset_file_name, "#{self.asset_file_name}.flv")
+    update_attribute(:asset_file_name, "#{self.asset_file_name.gsub(".mov",'').gsub(".mp4",'').gsub(".MOV",'').gsub(".MP4",'').gsub(".avi",'').gsub(".AVI",'').gsub(".flv",'').gsub(".FLV",'')}.flv")
   end
 
   def grab_screenshot_from_video
