@@ -1,0 +1,16 @@
+.admin-table
+  th
+    color: white
+    background: black
+    padding: 5px
+  td
+    padding: 5px
+    background: $lighter-grey
+    
+input.delete-button
+  +linear-gradient(color-stops($light-red, $light-red 33%, $red 67%))
+  border: 1px solid $red
+  &:hover
+    +linear-gradient(color-stops($red, $red 33%, $light-red 67%))
+    border: 1px solid $red
+  
