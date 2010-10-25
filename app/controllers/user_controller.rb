@@ -17,6 +17,7 @@ class UserController < ApplicationController
     end
   end
 
+  
 	def foo a
 		a
 	end
