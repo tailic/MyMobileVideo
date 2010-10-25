@@ -1,0 +1,12 @@
+
+[<% @users.each do |user|%>
+  {
+  "user":{
+    "id":<%= user.id %>,
+    "email":"<%= user.email %>",
+    "name":"<%= user.name %>"
+  }
+}
+<%= @users.last == user ? " " : ","%>
+<%end%>
+]
