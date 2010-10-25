@@ -3,3 +3,5 @@ tmp
 log
 svnignores.txt
 Gemfile.lock
+.svn
+.redcar
