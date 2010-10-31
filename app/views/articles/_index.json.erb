@@ -1,0 +1,14 @@
+[<% @articles.each do |article|%>
+{
+  "article":{
+    "id":<%= article.id %>,
+    "title":"<%= article.title %>",
+    "body":"<%= article.body %>",
+    "exclusive":"<%= article.exclusive%>",
+    "created_at":"<%= article.created_at%>",
+    "url":"<%=article.asset.url%>"
+  }
+}
+<%= @articles.last == article ? " " : ","%>
+<%end%>
+]

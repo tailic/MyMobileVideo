@@ -2,32 +2,19 @@ class UserController < ApplicationController
   load_and_authorize_resource
   
   def index
-    @users = User.all
-    foo(1)
-    foo("1")
+    @users = User.all    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :partial => 'user/index.json'} 
     end
   end
-
-  
-	def foo a
-		a
-	end
   
   def new
     @user = User.new
     
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render :json => @users.to_json(:only => [ :id,
-                                                             :email,
-                                                             :name,
-                                                             :current_sign_in_at,
-                                                             :current_sign_in_ip,
-                                                             :role]) 
-                  }
+      format.json { render :partial => "user/show.json"}
     end
   end
   
