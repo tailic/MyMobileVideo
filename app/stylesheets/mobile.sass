@@ -6,49 +6,63 @@
 
 @import partials/colors
 
-body
-  background-color: #fff
-  color: #333
-  font-family: helvetica, arial, sans-serif
-  font-size: 62px
-  line-height: 1.2em
-  
 =h1
-  font-size: 82px
+  font-size: 22px
   margin-bottom: 10px
   border-bottom: 1px solid $grey
   padding-bottom: 9px
   line-height: 1em
 
 =h2
-  font-size: 72px
+  font-size: 18px
   margin-bottom: 10px
 
 =h3
-  font-size: 62px
+  font-size: 16px
   margin-bottom: 10px
 
 =h4
-  font-size: 62px
+  font-size: 13px
   font-weight: bold
   color: $grey
   margin-bottom: 10px
 
 =h5
-  font-size: 62px
+  font-size: 13px
   font-weight: bold
   color: $grey
   margin-bottom: 10px
 
 =h6
-  font-size: 62px
+  font-size: 13px
   font-weight: bold
   color: $grey
   margin-bottom: 10px
 
 
+body
+  background-color: #fff
+  color: #333
+  font-family: helvetica, arial, sans-serif
+  line-height: 1.2em
+  padding: 0px
+  margin: 0px
+
+a
+  color: $blue
+  text-decoration: none
+  &:visited
+    color: $blue
+  &:hover
+    color: $blue
+    background-color: $lighter-blue
+
+
 h1
   +h1
+  padding: 0 10px
+  line-height: 2em
+  font-weight: bold
 h2
   +h2
   overflow: hidden
@@ -67,9 +81,56 @@ h5
   +h5
 h6
   +h6
-    
+
 ol, ul
   +reset-list-style
 
 #container
-  padding: 50px
+  padding: 0px
+  
+#header
+  background-color: $blue
+  font-weight: bold
+  line-height: 2em
+  font-size: 24px
+  padding: 10px
+  a
+    color: white
+
+#center
+  padding: 0px
+  
+.new-videos
+  overflow: hidden
+  padding: 0 10px
+  li
+    +float-left
+    height: 100px
+    margin: 10px 0 10px 0
+    .video
+      +float-left
+      width: 140px
+    .info
+      +float-left
+      width: 160px
+.register-now
+  background-color: $lighter-grey
+  line-height: 2em
+  padding: 0 10px
+  
+#footer
+  background-color: black
+  overflow: hidden
+  line-height: 1.5em
+  padding: 5px 10px
+  text-align: center
+  a
+    font-size: 14px
+    color: white
+  .footer-links
+    margin: 0px auto
+    width: 280px
+    display: inline-block
+    +horizontal-list
+.copyright
+  display: block

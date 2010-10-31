@@ -4,29 +4,19 @@
     %title MyMobileVideo
     = stylesheet_link_tag 'compiled/mobile.css' if mobile_device?
     = javascript_include_tag 'flowplayer-3.2.4.min.js'
+    %meta{ :name => "viewport", :content => "width=device-width" }
     
     = csrf_meta_tag
   %body
     #container
       #header
         = link_to 'MyMobileVideo', root_path, :id => 'logo'
-        %ul.social-links
-          %li= link_to 'twitter', 'http://twitter.com', :class => 'social-icon twitter'
-          %li= link_to 'facebook', 'http://facebook.com', :class => 'social-icon facebook'
-          %li= link_to 'rss', 'http://feed.com', :class => 'social-icon rss'
-        -if user_signed_in? && (current_user.role? :admin)
-          .admin-area
-            = link_to 'Adminbereich', admin_articles_path
-        - if user_signed_in?
-          .signed-in
-            = raw("Angemeldet als #{link_to current_user.email, current_user } | #{link_to 'Abmelden' , destroy_user_session_path}")
-
+      .register-now
+        -if ! user_signed_in?
+          Be a part of the future.
+          = link_to ' Sign up now!', new_user_registration_path
       #center
         .content
-          .register-now
-            -if ! user_signed_in?
-              Be a part of the future.
-              = link_to ' Sign up now!', new_user_registration_path
           = yield
       #sidebar
         .content
@@ -39,8 +29,10 @@
           %li= raw('&nbsp;|&nbsp;')
           %li= link_to 'Impressum', '/impressum'
           - if mobile_device?
+            %li= raw('&nbsp;|&nbsp;')
             %li= link_to "Normale Seite", :mobile => 0
           - else
+            %li= raw('&nbsp;|&nbsp;')
             %li= link_to "Mobile Seite", :mobile => 1
         .copyright= link_to raw('&copy; 2010 HAW Hamburg'), 'http://www.haw-hamburg.de/'
       
