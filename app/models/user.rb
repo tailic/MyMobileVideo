@@ -42,7 +42,11 @@ class User < ActiveRecord::Base
 
   
   def role?(role)
-    self.role == role.to_s
+    if self.role.nil?
+      return false
+    else
+      return self.role == role.to_s
+    end
   end
   
   

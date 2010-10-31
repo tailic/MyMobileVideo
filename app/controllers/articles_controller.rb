@@ -1,7 +1,13 @@
 class ArticlesController < ApplicationController
+   load_and_authorize_resource
+  
   def index
     @articles = Article.all
     @featured_articles = Article.find(:all, :conditions => "exclusive = true", :limit => 2, :order => "updated_at DESC")    
+    respond_to do |format|
+      format.html # new.html.haml
+      format.json { render :partial => 'articles/index.json'} 
+    end
   end
 
   def show
@@ -9,8 +15,8 @@ class ArticlesController < ApplicationController
     @articles = Article.all(:limit => 5)
 
     respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @article }
+      format.html # show.html.haml
+      format.json  { render :partial => 'articles/show.json' }
     end
   end
 
@@ -19,7 +25,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @article }
+      format.json  { render :partial => 'articles/show.json' }
     end
   end
 
@@ -34,10 +40,10 @@ class ArticlesController < ApplicationController
       if @article.save
         @article.delay.convert
         format.html { redirect_to(@article, :notice => 'Article was successfully created.') }
-        format.xml  { render :xml => @article, :status => :created, :location => @article }
+        format.json  { render :json => @article, :status => :created, :location => @article }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @article.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @article.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -51,7 +57,7 @@ class ArticlesController < ApplicationController
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @article.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @article.errors, :status => :unprocessable_entity }
       end
     end
   end
