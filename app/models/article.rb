@@ -20,16 +20,31 @@ class Article < ActiveRecord::Base
   
   has_attached_file :asset
 
- # validates_attachment_presence :asset
-  #validates_attachment_content_type :asset, :content_type => 'video/quicktime'
+  validates_attachment_presence :asset
+  validates_attachment_content_type :asset, :content_type => [ 'video/quicktime', 'video/x-flv', 'video/mp4', 'video/mpeg']
 
   # This method creates the ffmpeg command that we'll be using
   def convert
     logger.debug "testing the status of the current file #{self.asset_file_name} #{self.asset_content_type} #{self.asset_file_name} #{self.asset_file_name}"
-    flv = File.join(File.dirname(asset.path), "#{self.asset_file_name.gsub(".mov",'').gsub(".mp4",'').gsub(".MOV",'').gsub(".MP4",'').gsub(".avi",'').gsub(".AVI",'').gsub(".FLV",'')}.flv")
-    File.open(flv, 'w')
-    system "ffmpeg -i #{ asset.path }  -ar 22050 -ab 192000 -s 480x360 -vcodec flv -r 25 -qscale 8 -f flv -y #{ flv }"
-    grab_screenshot_from_video
+    if self.asset_file_name.include? ".flv"
+      mp4 = File.join(File.dirname(asset.path), "#{self.asset_file_name.gsub(".flv",'').gsub(".FLV",'')}.mp4")
+      File.open(mp4, 'w')
+      system "ffmpeg -i #{ asset.path } -ar 44100 -ab 128000 -s 640x480 -vcodec mpeg4 -aspect 16:9 -r 25 -qscale 8 -f mp4 -y #{ mp4 }"
+      grab_screenshot_from_video
+    elsif self.asset_file_name.include? ".mp4"
+      flv = File.join(File.dirname(asset.path), "#{self.asset_file_name.gsub(".mp4",'').gsub(".MP4",'')}.flv")
+      File.open(flv, 'w')
+      system "ffmpeg -i #{ asset.path }  -ar 22050 -ab 192000 -s 480x360 -vcodec flv -r 25 -qscale 8 -f flv -y #{ flv }"
+      grab_screenshot_from_video
+    else
+      flv = File.join(File.dirname(asset.path), "#{self.asset_file_name.gsub(".mov",'').gsub(".mp4",'').gsub(".MOV",'').gsub(".MP4",'').gsub(".avi",'').gsub(".AVI",'')}.flv")
+      File.open(flv, 'w')
+      system "ffmpeg -i #{ asset.path }  -ar 22050 -ab 192000 -s 480x360 -vcodec flv -r 25 -qscale 8 -f flv -y #{ flv }"
+      mp4 = File.join(File.dirname(asset.path), "#{self.asset_file_name.gsub(".mov",'').gsub(".flv",'').gsub(".MOV",'').gsub(".FLV",'').gsub(".avi",'').gsub(".AVI",'')}.mp4")
+      File.open(mp4, 'w')
+      system "ffmpeg -i #{ asset.path } -ar 44100 -ab 128000 -s 640x480 -vcodec mpeg4 -aspect 16:9 -r 25 -qscale 8 -f mp4 -y #{ mp4 }"
+      grab_screenshot_from_video
+    end
   end
  
   private
