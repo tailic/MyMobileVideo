@@ -3,7 +3,6 @@ load_and_authorize_resource
 layout 'admin'
   def index
     @articles = Article.all
-    @featured_articles = Article.find(:all, :conditions => "exclusive = true", :limit => 2, :order => "updated_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
