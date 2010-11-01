@@ -22,7 +22,7 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
-
+    unauthorized! if cannot? :create, @article
     respond_to do |format|
       format.html # new.html.erb
       format.json  { render :partial => 'articles/show.json' }
@@ -31,11 +31,12 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    unauthorized! if cannot? :edit, @article
   end
 
   def create
     @article = Article.new(params[:article])
-
+    unauthorized! if cannot? :create, @article
     respond_to do |format|
       if @article.save
         @article.delay.convert
