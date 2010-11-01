@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   
   def index
     @articles = Article.all
-    @featured_articles = Article.find(:all, :conditions => "exclusive = true", :limit => 2, :order => "updated_at DESC")    
+    @featured_articles = Article.where(:conditions => "exclusive = true").limit(2).order("updated_at DESC")    
     respond_to do |format|
       format.html # new.html.haml
       format.json { render :partial => 'articles/index.json'} 

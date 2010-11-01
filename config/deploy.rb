@@ -1,6 +1,7 @@
 set :application, "MyMobileVideo"
 set :repository,  "git://github.com/tailic/MyMobileVideo.git"
 
+
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
