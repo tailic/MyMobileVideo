@@ -96,7 +96,23 @@ ol, ul
   padding: 10px
   a
     color: white
-
+.header-login
+  +float-right
+  +border-radius(5px)
+  //+linear-gradient(color-stops($light-blue, $light-blue 33%, $blue 67%))
+  +linear-gradient(color-stops($light-green, $green 33%, $dark-green 67%))
+  +text-shadow(#444, 0px, 1px, 1px)
+  line-height: 24px
+  color: white
+  font-weight: bold
+  padding: 3px 8px
+  font-size: 18px
+  border: 1px solid $dark-green
+  cursor: pointer
+  margin-top: 10px
+  &:hover
+    +linear-gradient(color-stops($blue, $blue 33%, $light-blue 67%))
+    border: 1px solid $blue
 #center
   padding: 0px
   

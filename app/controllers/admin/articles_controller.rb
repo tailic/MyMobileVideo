@@ -68,7 +68,7 @@ layout 'admin'
     @article.destroy
 
     respond_to do |format|
-      format.html { redirect_to(articles_url) }
+      format.html { redirect_to admin_articles_url }
       format.xml  { head :ok }
     end
   end

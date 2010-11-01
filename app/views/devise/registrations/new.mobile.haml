@@ -1,0 +1,16 @@
+%h1 Registrierung
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:autocomplete => "off"}) do |f|
+  = devise_error_messages!
+  .row
+    = f.label :email
+    = f.text_field :email
+  .row
+    = f.label :password
+    = f.password_field :password
+  .row
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
+  .row
+    = f.submit "Jetzt registrieren!"
+
+= render :partial => "devise/shared/links"

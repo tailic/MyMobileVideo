@@ -251,44 +251,75 @@ ol, ul {
   color: white;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003100}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000399}}
+.header-login {
+  display: inline;
+  float: right;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #09e485), color-stop(49.254%, #07b168), color-stop(100%, #226448));
+  background-image: -moz-linear-gradient(top, #09e485 0%, #07b168 33%, #226448 67%);
+  background-image: linear-gradient(top, #09e485 0%, #07b168 33%, #226448 67%);
+  text-shadow: #444444 0px 1px 1px;
+  line-height: 24px;
+  color: white;
+  font-weight: bold;
+  padding: 3px 8px;
+  font-size: 18px;
+  border: 1px solid #226448;
+  cursor: pointer;
+  margin-top: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003113}}
+.header-login:hover {
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #097be4), color-stop(49.254%, #097be4), color-stop(100%, #03a2f1));
+  background-image: -moz-linear-gradient(top, #097be4 0%, #097be4 33%, #03a2f1 67%);
+  background-image: linear-gradient(top, #097be4 0%, #097be4 33%, #03a2f1 67%);
+  border: 1px solid #097be4;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003116}}
 #center {
   padding: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003103}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003119}}
 .new-videos {
   overflow: hidden;
   padding: 0 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003106}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003122}}
 .new-videos li {
   display: inline;
   float: left;
   height: 100px;
   margin: 10px 0 10px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003110}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003126}}
 .new-videos li .video {
   display: inline;
   float: left;
   width: 140px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003113}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003129}}
 .new-videos li .info {
   display: inline;
   float: left;
   width: 160px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003116}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003132}}
 .register-now {
   background-color: #eeeeee;
   line-height: 2em;
   padding: 0 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003121}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003137}}
 #footer {
   background-color: black;
   overflow: hidden;
@@ -296,12 +327,12 @@ ol, ul {
   padding: 5px 10px;
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003127}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003143}}
 #footer a {
   font-size: 14px;
   color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003130}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003146}}
 #footer .footer-links {
   margin: 0px auto;
   width: 280px;
@@ -333,7 +364,7 @@ ol, ul {
   padding-right: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003135}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003151}}
 .copyright {
   display: block;
 }

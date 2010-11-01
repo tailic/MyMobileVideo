@@ -11,6 +11,7 @@
     #container
       #header
         = link_to 'MyMobileVideo', root_path, :id => 'logo'
+        = link_to 'Login', new_user_session_path, :class => 'header-login'
       .register-now
         -if ! user_signed_in?
           Be a part of the future.

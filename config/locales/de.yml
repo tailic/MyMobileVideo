@@ -124,6 +124,7 @@ de:
   activerecord:
     models:
       article: "Artikel"
+      user: "Benutzer"
     attributes:
       article:
         title: "Titel"
@@ -179,3 +180,8 @@ de:
       back: "Zurück"
     edit:
       title: "Artikel bearbeiten"
+  user:
+    show:
+      title: "Benutzerprofil"
+    edit:
+      title: "Profil bearbeiten"

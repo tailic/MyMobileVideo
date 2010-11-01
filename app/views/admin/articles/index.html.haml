@@ -10,7 +10,7 @@
   %tbody
   - @articles.each do |article|
     %tr
-      %td{:width => '60px'}= "thumb"
+      %td{:width => '60px'}= image_tag(get_asset_thumb(article.asset.url, article.asset.original_filename, "thumb"), :width => "80px")
       %td{:width => '330px'}= link_to article.title, article
       %td{:width => '90px'}= l(article.created_at, :format => :custom)
       %td.options    
