@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   
   def index
     @articles = Article.all
-    @featured_articles = Article.where(:exclusive => "true").limit(2).order("updated_at DESC")    
+    @featured_articles = Article.where(:exclusive => "true").limit(2).order("articles.updated_at DESC")    
     respond_to do |format|
       format.html # new.html.haml
       format.json { render :partial => 'articles/index.json'} 
@@ -13,7 +13,8 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @articles = Article.all(:limit => 5)
-
+    @article.views = @article.views + 1
+    @article.save
     respond_to do |format|
       format.html # show.html.haml
       format.json  { render :partial => 'articles/show.json' }
@@ -37,6 +38,8 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(params[:article])
     unauthorized! if cannot? :create, @article
+    @article.user = current_user
+    @article.views = 0
     respond_to do |format|
       if @article.save
         @article.delay.convert
