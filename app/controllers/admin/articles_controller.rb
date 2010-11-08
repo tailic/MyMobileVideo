@@ -13,8 +13,6 @@ layout 'admin'
   def show
     @article = Article.find(params[:id])
     @articles = Article.all(:limit => 5)
-    
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @article }
@@ -23,7 +21,6 @@ layout 'admin'
 
   def new
     @article = Article.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @article }
@@ -53,23 +50,23 @@ layout 'admin'
     @article = Article.find(params[:id])
 
     respond_to do |format|
-      if @article.update_attributes(params[:article])
-        format.html { redirect_to(@article, :notice => 'Article was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @article.errors, :status => :unprocessable_entity }
-      end
+      
+       if @article.update_attributes(params[:article])
+      flash[:notice] = "Successfully updated Video."
+      redirect_to admin_articles_path
+    else
+      render :action => 'editarticle'
+    end
     end
   end
-
-  def destroy
+  
+  
+   def destroy
     @article = Article.find(params[:id])
-    @article.destroy
-
-    respond_to do |format|
-      format.html { redirect_to admin_articles_url }
-      format.xml  { head :ok }
+    if @article.delete
+      flash[:notice] = "Successfully deleted Article."
+      redirect_to admin_articles_path
     end
   end
+
 end

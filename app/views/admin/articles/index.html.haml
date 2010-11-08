@@ -8,12 +8,17 @@
       %th Erstellt am
       %th Optionen
   %tbody
-  - @articles.each do |article|
+  - for article in @articles
     %tr
-      %td{:width => '60px'}= image_tag(get_asset_thumb(article.asset.url, article.asset.original_filename, "thumb"), :width => "80px")
+      %td{:width => '60px'}= image_tag article.asset.url(:thumb)
       %td{:width => '330px'}= link_to article.title, article
       %td{:width => '90px'}= l(article.created_at, :format => :custom)
       %td.options    
-        = link_to "", article, {:class => 'icon show', :title => 'Anzeigen'}
-        = link_to "", edit_article_path(article), {:class => 'icon edit', :title => 'Bearbeiten'}
-        = button_to "", article, :confirm => "Are you sure?", :method => :delete, :class => "icon delete"
+        = link_to "", [:admin, article] , {:class => 'icon show', :title => 'Anzeigen'}
+        = link_to "", edit_admin_article_path(article), {:class => 'icon edit', :title => 'Bearbeiten'}
+        = button_to "", [:admin, article], :confirm => "Are you sure?", :method => :delete, :class => "icon delete"
+              
+
+       
+
+
