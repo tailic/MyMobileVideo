@@ -1,10 +1,12 @@
 .DS_Store
 database.yml
-tmp
+tmp/*
+log/*.log
 development.log
 svnignores.txt
 Gemfile.lock
 .svn
 .redcar
 .rvmrc
-assets
+system/assets
+system/assets/videos

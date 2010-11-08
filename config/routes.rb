@@ -7,7 +7,7 @@ Service::Application.routes.draw do
   resources :articles
   resources :user
   
-   resources :articles, :only => [:index, :show]
+  #resources :articles, :only => [:index, :show]
   resources :user, :only => [:index, :show, :delete]
   namespace :admin do
     root :to =>'articles#index'
@@ -16,8 +16,8 @@ Service::Application.routes.draw do
     #resources :some_other_resource
   end
 
-match '/videos' =>'articles#index'
-match '/videos/:id' =>'articles#show'
+  match '/videos' =>'articles#index'
+  match '/videos/:id' =>'articles#show'
  # match '/:page' => 'pages#show'
 
 
