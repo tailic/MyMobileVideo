@@ -8,8 +8,14 @@
 .description
   %h4 Beschreibung
   = @article.body
-
-
+  
+  
+%p
+  Views:
+  = @article.views
+%p
+  Created by:
+  = link_to @article.user.name, user_path(@article.user)
 %p
 - if user_signed_in?
   = link_to 'Edit', edit_article_path(@article)

@@ -26,19 +26,22 @@
 
 class User < ActiveRecord::Base
   require 'paperclip' 
+  has_many :articles
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable,:registerable,:recoverable, :rememberable, :trackable, :validatable, :http_authenticatable, :token_authenticatable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :name, :password, :password_confirmation, :remember_me, :role, :asset
   
-  has_attached_file :asset, :styles => { 
-                              :large => "600>",
-                              :medium => "290>", 
-                              :thumb  => "135>" 
-                            }
+  has_attached_file :asset, 
+                    :url => "/system/:attachment/user/:id/:style/:basename.:extension",  
+                    :path => ":rails_root/public/system/:attachment/user/:id/:style/:basename.:extension",
+                    :styles => { 
+                      :large => "600>",
+                      :medium => "290>", 
+                      :thumb  => "135>"
+                    }                         
 
   
   def role?(role)

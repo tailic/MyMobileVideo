@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101025102525) do
+ActiveRecord::Schema.define(:version => 20101108093943) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(:version => 20101025102525) do
     t.string   "asset_content_type"
     t.integer  "asset_file_size"
     t.datetime "asset_updated_at"
+    t.integer  "user_id"
+    t.integer  "views"
   end
 
   create_table "delayed_jobs", :force => true do |t|
