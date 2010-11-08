@@ -170,16 +170,16 @@ de:
         title: "Benutzer Verwaltung"
     articles:
       index:
-        title: "Artikel Verwaltung"
+        title: "Videos Verwaltung"
   articles:
     index:
       title: "Neuste Videos"
-      new_article: "Artikel anlegen"
+      new_article: "Video anlegen"
     new:
-      title: "Neuen Artikel anlegen"
+      title: "Neues Video anlegen"
       back: "Zurück"
     edit:
-      title: "Artikel bearbeiten"
+      title: "Video bearbeiten"
   user:
     show:
       title: "Benutzerprofil"
