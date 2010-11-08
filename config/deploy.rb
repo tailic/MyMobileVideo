@@ -18,9 +18,12 @@ server "141.22.26.253", :app, :web, :db
 # these http://github.com/rails/irs_process_scripts
 
 namespace :deploy do
-   task :start do ; end
+   task :start do 
+     run "cd #{current_path} && #{sudo} rake RAILS_ENV=production jobs:work"
+   end
    task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
      run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+     run "cd #{current_path} && #{sudo} rake RAILS_ENV=production jobs:work"
   end
 end
