@@ -57,10 +57,10 @@ class Article < ActiveRecord::Base
     logger.debug "Trying to grab a screenshot from #{asset.path}"
     flv = File.join(File.dirname(asset.path), "thumb135x100.jpg")
     File.open(flv, 'w')
-    system "ffmpeg -i #{ asset.path } -s 135x100 -vframes 1 -f image2 -an #{flv}"
+    system "ffmpeg -i #{ asset.path } -s 135x100 -vframes 10 -f image2 -an #{flv}"
     flv = File.join(File.dirname(asset.path), "thumb290x200.jpg")
     File.open(flv, 'w')
-    system "ffmpeg -i #{ asset.path } -s 290x200 -vframes 1 -f image2 -an #{flv}"
+    system "ffmpeg -i #{ asset.path } -s 290x200 -vframes 10 -f image2 -an #{flv}"
 
   end
 
