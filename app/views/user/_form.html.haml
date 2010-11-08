@@ -7,15 +7,14 @@
   = f.text_field :email
 .row
   = f.label :password
-  = f.password_field :password
+  = f.password_field :password, { :value => "" }
 .row
   = f.label :password_confirmation
-  = f.password_field :password_confirmation
+  = f.password_field :password_confirmation, { :value => "" }
 .row
   = f.label :role
   =f.select :role , %w{ user admin }
 .row
   = f.label :asset
   = f.file_field :asset
-.row
-  = f.submit "Profil bearbeiten"
+
