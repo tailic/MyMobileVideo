@@ -18,7 +18,9 @@ require 'paperclip'
 class Article < ActiveRecord::Base
   validates_presence_of :title, :body
   
-  has_attached_file :asset
+  has_attached_file :asset,
+                    :url => "/system/:attachment/videos/:id/:style/:basename.:extension",  
+                    :path => ":rails_root/public/system/:attachment/videos/:id/:style/:basename.:extension"  
 
   validates_attachment_presence :asset
   validates_attachment_content_type :asset, :content_type => [ 'video/quicktime', 'video/x-flv', 'video/mp4', 'video/mpeg']
