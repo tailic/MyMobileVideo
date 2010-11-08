@@ -34,13 +34,14 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :name, :password, :password_confirmation, :remember_me, :role, :asset
   
-  has_attached_file :asset, :styles => { 
-                              :large => "600>",
-                              :medium => "290>", 
-                              :thumb  => "135>"
-                              },
+  has_attached_file :asset, 
                     :url => "/system/:attachment/user/:id/:style/:basename.:extension",  
-                    :path => ":rails_root/public/system/:attachment/user/:id/:style/:basename.:extension"  
+                    :path => ":rails_root/public/system/:attachment/user/:id/:style/:basename.:extension",
+                    :styles => { 
+                      :large => "600>",
+                      :medium => "290>", 
+                      :thumb  => "135>"
+                    }                         
 
   
   def role?(role)

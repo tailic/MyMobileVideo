@@ -16,6 +16,6 @@
       %td{:width => '180px'}= user.email
       %td{:width => '60px'}= user.role
       %td.options    
-        = link_to "", user_path(user), {:class => 'icon show', :title => 'Anzeigen'}
-        = link_to "", edit_user_path(user), {:class => 'icon edit', :title => 'Bearbeiten'}
-        = button_to "", user, :confirm => "Are you sure?", :method => :delete, :class => "icon delete"
+        = link_to "", admin_user_path(user), {:class => 'icon show', :title => 'Anzeigen'}
+        = link_to "", edit_admin_user_path(user), {:class => 'icon edit', :title => 'Bearbeiten'}
+        = button_to "", [:admin, user], :confirm => "Are you sure?", :method => :delete, :class => "icon delete"
