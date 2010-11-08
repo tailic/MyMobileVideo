@@ -18,6 +18,8 @@ require 'paperclip'
 class Article < ActiveRecord::Base
   validates_presence_of :title, :body
   
+  belongs_to :user
+  
   has_attached_file :asset
 
   validates_attachment_presence :asset
