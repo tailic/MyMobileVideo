@@ -4,9 +4,15 @@
     height: 380px
     display: block
     margin-bottom: 20px
-.description
+.description, .info
   padding: 5px
   
+.info
+  +clearfix
+  .views
+    +float-left
+  .user
+    +float-right
 .sidebar-videos
   li
     overflow: hidden
