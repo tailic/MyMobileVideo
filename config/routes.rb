@@ -16,7 +16,10 @@ Service::Application.routes.draw do
     #resources :some_other_resource
   end
 
-  match '/:page' => 'pages#show'
+match '/videos' =>'articles#index'
+match '/videos/:id' =>'articles#show'
+ # match '/:page' => 'pages#show'
+
 
   
 
