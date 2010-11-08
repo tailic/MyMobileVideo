@@ -37,6 +37,7 @@ class User < ActiveRecord::Base
   has_attached_file :asset, 
                     :url => "/system/:attachment/user/:id/:style/:basename.:extension",  
                     :path => ":rails_root/public/system/:attachment/user/:id/:style/:basename.:extension",
+                    :default_url => "/system/:attachment/missing_:style.png",
                     :styles => { 
                       :large => "600>",
                       :medium => "290>", 

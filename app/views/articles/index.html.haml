@@ -4,9 +4,7 @@
     - @featured_articles.each do |feature|
       %li
         .video
-          = link_to image_tag(get_asset_thumb(feature.asset.url, feature.asset.original_filename, "medium")), feature.asset.url, :id => "player_#{feature.id}"
-          %script
-            = "flowplayer('player_#{feature.id}', '/videos/flowplayer-3.2.5.swf', {clip:{autoPlay: false}});"
+          = link_to image_tag(get_asset_thumb(feature.asset.url, feature.asset.original_filename, "medium"),:alt => "#{feature.asset.original_filename}", :title => "#{feature.asset.original_filename}"), feature
         .info
           = link_to truncate(feature.title, :length => 40), feature
             
