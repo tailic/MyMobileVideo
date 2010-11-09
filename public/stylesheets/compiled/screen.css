@@ -196,7 +196,7 @@ a img {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/partials\/_videos\.sass}line{font-family:\0000332}}
 .sidebar-videos .info {
   margin-left: 5px;
-  width: 130px;
+  width: 120px;
   display: inline;
   float: left;
 }
@@ -805,6 +805,38 @@ h6 {
   margin-bottom: 20px;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/partials\/_users\.sass}line{font-family:\000031}}
+h1 {
+  position: relative;
+  overflow: hidden;
+  *zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/partials\/_users\.sass}line{font-family:\000034}}
+h1 .h1-content {
+  display: inline;
+  float: left;
+  width: 540px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/partials\/_users\.sass}line{font-family:\000037}}
+h1 .h1-options {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: inline;
+  float: right;
+  width: 60px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/partials\/_users\.sass}line{font-family:\0000313}}
+h1 .h1-options form {
+  overflow: hidden;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/partials\/_users\.sass}line{font-family:\0000315}}
+.online {
+  color: #226448;
+  font-size: 12px;
+}
+
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/partials\/_admin\.sass}line{font-family:\000032}}
 .admin-table th {
   color: white;
@@ -826,10 +858,11 @@ h6 {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/partials\/_admin\.sass}line{font-family:\0000315}}
 input[type=submit].icon {
+  display: inline;
+  float: right;
   width: 22px;
   height: 22px;
   border: 1px solid #999999;
-  float: left;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/partials\/_admin\.sass}line{font-family:\0000320}}
 input[type=submit].icon.delete:hover {
@@ -845,11 +878,12 @@ input[type=submit].icon.delete:hover {
   -ms-border-radius: 4px;
   -khtml-border-radius: 4px;
   border-radius: 4px;
+  display: inline;
+  float: right;
   width: 20px;
   height: 20px;
   border: 1px solid #999999;
   display: block;
-  float: left;
   margin-right: 5px;
 }
 

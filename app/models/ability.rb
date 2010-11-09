@@ -11,6 +11,7 @@ class Ability
         can :read, :all
         if user.role?(:user)
           can :create, Article
+          can :update, user
         end
       end
     end

@@ -1,17 +1,15 @@
-%h1= t('.title')
-%p#notice= notice
-- if @user.current_sign_in_at != @user.last_sign_in_at
-  %p
-    %b
-      User is online! 
-    %br 
-    Since 
-    = @user.current_sign_in_at
-    @
-    = @user.current_sign_in_ip
+%h1
+  = t('.title')
+  = raw("<span class='online'>gerade online!</span>") if @user.current_sign_in_at != @user.last_sign_in_at
+  .h1-options
+    -if can? :update, @user
+      = link_to "", edit_user_path(@user), {:class => 'icon edit', :title => 'Bearbeiten'}
+    - if can? :delete, @user
+      = button_to "", @user, :confirm => "Are you sure?", :method => :delete, :class => "icon delete"
+  
 %p
   %b Anhang:
-  = image_tag @user.asset.url
+  = image_tag @user.asset.url(:thumb)
 %p
   %b ID:
   = @user.id
@@ -35,11 +33,3 @@
   = @user.last_sign_in_at
   @
   = @user.last_sign_in_ip
-    
-
-%p
-  -if can? :update, @user
-    = link_to "", edit_user_path(@user), {:class => 'icon edit', :title => 'Bearbeiten'}
-  - if can? :delete, @user
-    = button_to "", @user, :confirm => "Are you sure?", :method => :delete, :class => "icon delete"
-  \#{link_to 'Back', admin_user_path}
