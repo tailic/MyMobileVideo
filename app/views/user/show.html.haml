@@ -6,30 +6,26 @@
       = link_to "", edit_user_path(@user), {:class => 'icon edit', :title => 'Bearbeiten'}
     - if can? :delete, @user
       = button_to "", @user, :confirm => "Are you sure?", :method => :delete, :class => "icon delete"
-  
-%p
-  %b Anhang:
-  = image_tag @user.asset.url(:thumb)
-%p
-  %b ID:
-  = @user.id
-%p
-  %b Name:
-  = @user.name
-%p
-  %b Body:
-  = @user.email
-%p
-  %b Role:
-  = @user.role
-%p
-  %b Sign in:
-  = @user.sign_in_count
-%p
-  %b Created at:
-  = @user.created_at
-%p
-  %b Last Sign in:
-  = @user.last_sign_in_at
-  @
-  = @user.last_sign_in_ip
+
+%article.profile
+  %section.image= image_tag @user.asset.url(:thumb)
+  %section.info
+    %ul
+      %li
+        .label Name:
+        .attr= @user.name
+      %li
+        .label E-Mail:
+        .attr= @user.email
+      %li
+        .label Status:
+        .attr= @user.role
+      %li
+        .label Videos:
+        .attr= @user.articles.count
+      %li
+        .label Registriert seit:
+        .attr= l(@user.created_at)
+      %li
+        .label Zuletzt online:
+        .attr= l(@user.last_sign_in_at)
