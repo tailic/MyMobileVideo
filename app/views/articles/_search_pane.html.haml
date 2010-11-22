@@ -1,0 +1,6 @@
+= text_field_with_auto_complete :search, :query
+
+%ul
+  -@articles.each do |article|
+	  %li
+    = link_to article.name, article_path(article)

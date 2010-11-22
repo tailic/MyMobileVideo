@@ -7,7 +7,7 @@
           = link_to image_tag(get_asset_thumb(feature.asset.url, feature.asset.original_filename, "medium"),:alt => "#{feature.asset.original_filename}", :title => "#{feature.asset.original_filename}"), feature
         .info
           = link_to truncate(feature.title, :length => 40), feature
-            
+
 %h1 Neue Videos
 %ol.new-videos
   - @articles.each do |article|

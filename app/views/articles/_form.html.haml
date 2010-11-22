@@ -14,8 +14,9 @@
     = f.label :body
     = f.text_area :body
   .row
-    = f.label :exclusive
-    = f.check_box :exclusive
+    - if current_user.role? :admin
+      = f.label :exclusive
+      = f.check_box :exclusive
   .row
     = f.label :asset
     = f.file_field :asset
