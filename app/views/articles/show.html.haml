@@ -25,6 +25,8 @@
 .description
   %h4 Beschreibung
   %p= @article.body
+  %h4 Tags:
+  %p= @article.tags.map! { |k| "#{k.name}" }.join(", ")
   %p= link_to 'Zurück', articles_path
 
 - content_for :sidebar do

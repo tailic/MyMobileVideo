@@ -17,8 +17,11 @@ require 'paperclip'
 
 class Article < ActiveRecord::Base
   validates_presence_of :title, :body
-    
+  attr_writer :tag_names
+  after_save :assign_tags
+
   belongs_to :user
+  has_and_belongs_to_many :tags
 
   has_attached_file :asset,
                     :url => "/system/:attachment/videos/:id/:style/:basename.:extension",  
@@ -27,6 +30,22 @@ class Article < ActiveRecord::Base
   validates_attachment_presence :asset
   validates_attachment_content_type :asset, :content_type => [ 'video/quicktime', 'video/x-flv', 'video/mp4', 'video/mpeg']
 
+  def tag_names
+    @tag_names || tags.map(&:name).join(' ')
+  end
+  
+  private
+  
+  def assign_tags
+    if @tag_names
+      self.tags = @tag_names.split(/\s+/).map do |name|
+        tag = Tag.find_or_create_by_name(name)
+      end
+    end
+  end
+
+
+  
   # This method creates the ffmpeg command that we'll be using
   def convert
     logger.debug "testing the status of the current file #{self.asset_file_name} #{self.asset_content_type} #{self.asset_file_name} #{self.asset_file_name}"

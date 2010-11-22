@@ -13,6 +13,9 @@
   .row
     = f.label :body
     = f.text_area :body
+  .row  
+    = f.label :tag_names
+    = f.text_field :tag_names
   .row
     - if current_user.role? :admin
       = f.label :exclusive
