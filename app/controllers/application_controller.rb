@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   
-  before_filter :prepare_for_mobile
+  # before_filter :prepare_for_mobile
   
   private
   
