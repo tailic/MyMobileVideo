@@ -29,3 +29,19 @@
       %li
         .label Zuletzt online:
         .attr= l(@user.last_sign_in_at)
+    
+%article.videos
+  %h1 Hochgeladene Videos
+  %ol.new-videos
+    - @user.articles.each do |article|
+      %li{:title => "#{article.title}"}
+        .image
+          = link_to image_tag(get_asset_thumb(article.asset.url, article.asset.original_filename, "thumb"),:alt => "#{article.asset.original_filename}", :title => "#{article.asset.original_filename}"), article
+        .info
+          %span.title
+            = link_to truncate(article.title, :length => 30), article
+          %span.date
+            = l(article.created_at, :format => :custom)
+
+- content_for :sidebar do
+  = render :partial => "shared/sidebar_login"
