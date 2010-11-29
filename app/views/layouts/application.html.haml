@@ -14,10 +14,13 @@
     #container
       #header
         = link_to 'MyMobileVideo', root_path, :id => 'logo'
-        %ul.social-links
-          %li= link_to 'twitter', 'http://twitter.com', :class => 'social-icon twitter'
-          %li= link_to 'facebook', 'http://facebook.com', :class => 'social-icon facebook'
-          %li= link_to 'rss', 'http://feed.com', :class => 'social-icon rss'
+        .search
+          = render :partial => "shared/search"
+        
+        / %ul.social-links
+        /   %li= link_to 'twitter', 'http://twitter.com', :class => 'social-icon twitter'
+        /   %li= link_to 'facebook', 'http://facebook.com', :class => 'social-icon facebook'
+        /   %li= link_to 'rss', 'http://feed.com', :class => 'social-icon rss'
         -if user_signed_in? && (current_user.role? :admin)
           .admin-area
             = link_to 'Adminbereich', admin_articles_path
@@ -34,13 +37,6 @@
           = yield
       #sidebar
         .content
-          = form_tag( :controller => "articles", :action => "search") do |f|
-            .row
-              Suchen
-              = text_field_tag :search
-            .action
-              = submit_tag "Suchen"
-        
           - if user_signed_in?
             = link_to "Video hochladen!", new_article_path, :id => "add-article-button"
           = yield :sidebar

@@ -1,5 +1,9 @@
 
-= "Keywords: #{@search}"
+%h1
+  .search-label= "Suchbegriff:" 
+  - if @search.length != 0
+    .search-term= @search
+    
 %ol.new-videos
   - @articles.each do |article|
     %li{:title => "#{article.title}"}
@@ -12,4 +16,4 @@
           = l(article.created_at, :format => :custom)
 
 - content_for :sidebar do
-  = render :partial => "shared/sidebar_login"
+  = render :partial =>  "shared/sidebar_login"

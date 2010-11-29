@@ -1,0 +1,4 @@
+= form_tag( :controller => "articles", :action => "search") do |f|
+  = text_field_tag :search
+  =# button_to "Suchen", :class => "btn-search"
+  %button#btn-search{:type => "submit"} Suchen

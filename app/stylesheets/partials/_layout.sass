@@ -48,6 +48,7 @@ $grid_image: "/images/grid.png"
       color: white
     &:hover
       background-color: black
+      color: white
 .admin-area
   position: absolute
   top: 9px
@@ -100,11 +101,13 @@ $grid_image: "/images/grid.png"
   +column(8)
   +float-right
   text-align: right
-.social-links
-  +horizontal-list
+.search
+  // +horizontal-list
   position: absolute
   top: 36px
   right: 20px
+  width: 450px
+  text-align: right
 .social-icon
   width: 48px
   height: 48px
@@ -119,4 +122,14 @@ $grid_image: "/images/grid.png"
     
 .login, .sidebar-videos
   margin-bottom: 20px
+
+.search-term
+  +float-left
+  +border-radius(5px)
+  padding: 5px 10px
+  background: $lighter-blue
   
+.search-label
+  +float-left
+  line-height: 1.5em
+  margin-right: 10px
