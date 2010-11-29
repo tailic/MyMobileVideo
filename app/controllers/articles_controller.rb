@@ -1,9 +1,11 @@
 class ArticlesController < ApplicationController
    load_and_authorize_resource
+  respond_to :json
+
   
   def index
     @articles = Article.all
-    @featured_articles = Article.where(:exclusive => "true").limit(2).order("articles.updated_at DESC")    
+    @featured_articles = Article.where(:exclusive => true).limit(2).order("articles.updated_at DESC")
     respond_to do |format|
       format.html # new.html.haml
       format.json { render :partial => 'articles/index.json'} 
@@ -75,4 +77,5 @@ class ArticlesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
 end

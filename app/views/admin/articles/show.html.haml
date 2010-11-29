@@ -1,5 +1,11 @@
 #notice= notice
-%h1= @article.title
+%h1
+  .h1-content= @article.title
+  .h1-options
+    - if can? :update, @article
+      = link_to '', edit_article_path(@article), {:class => 'icon edit', :title => 'Bearbeiten'}
+    - if can? :delete, @article
+      = button_to "", @article, :confirm => "Are you sure?", :method => :delete, :class => "icon delete"
 .video
   = link_to '', @article.asset.url, :id => "player_#{@article.id}"
   %script
@@ -7,15 +13,6 @@
     
 .description
   %h4 Beschreibung
-  = @article.body
-
-
-%p
-- if user_signed_in?
-  = link_to 'Edit', edit_article_path(@article)
-  |
-= link_to 'Back', articles_path
-
-- content_for :sidebar do
-  = render :partial => "shared/sidebar_login"
-  = render :partial => "shared/sidebar_videos", :locals => {:articles => @articles}
+  %p= @article.body
+  %p
+    = link_to 'Zurück', admin_root_path

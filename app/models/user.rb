@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
   has_many :articles
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
-  devise :database_authenticatable,:registerable,:recoverable, :rememberable, :trackable, :validatable, :http_authenticatable, :token_authenticatable
+  devise :database_authenticatable,:registerable,:recoverable, :rememberable, :trackable, :validatable, :http_authenticatable#, :token_authenticatable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :name, :password, :password_confirmation, :remember_me, :role, :asset
@@ -37,6 +37,7 @@ class User < ActiveRecord::Base
   has_attached_file :asset, 
                     :url => "/system/:attachment/user/:id/:style/:basename.:extension",  
                     :path => ":rails_root/public/system/:attachment/user/:id/:style/:basename.:extension",
+                    :default_url => "/system/:attachment/missing_:style.png",
                     :styles => { 
                       :large => "600>",
                       :medium => "290>", 

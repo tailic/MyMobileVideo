@@ -1,26 +1,33 @@
 #notice= notice
-%h1= @article.title
+%h1
+  .h1-content= @article.title
+  .h1-options
+    - if can? :update, @article
+      = link_to '', edit_article_path(@article), {:class => 'icon edit', :title => 'Bearbeiten'}
+    - if can? :delete, @article
+      = button_to "", @article, :confirm => "Are you sure?", :method => :delete, :class => "icon delete"
+  
 .video
   = link_to '', @article.asset.url, :id => "player_#{@article.id}"
   %script
     = "flowplayer('player_#{@article.id}', '/videos/flowplayer-3.2.5.swf', {clip:{autoPlay: false}});"
     
+.info
+  %span.views
+    %b
+      Views:
+    = @article.views
+  %span.user
+    %b
+      Created by:
+    = link_to @article.user.name, user_path(@article.user)
+    
 .description
   %h4 Beschreibung
-  = @article.body
-
-%p
-  Views:
-  = @article.views
-
-%p
-  Created by:
-  = link_to @article.user.name, user_path(@article.user)
-%p
-- if user_signed_in?
-  = link_to 'Edit', edit_article_path(@article)
-  |
-= link_to 'Back', articles_path
+  %p= @article.body
+  %h4 Tags:
+  %p= @article.tags.map! { |k| "#{k.name}" }.join(", ")
+  %p= link_to 'Zurück', articles_path
 
 - content_for :sidebar do
   = render :partial => "shared/sidebar_login"

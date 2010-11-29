@@ -168,16 +168,23 @@ de:
     user:
       index:
         title: "Benutzer Verwaltung"
+      show:
+        title: "Benutzerprofil"
+      edit:
+        title: "Benutzer bearbeiten"
     articles:
       index:
         title: "Videos Verwaltung"
+      edit:
+        title: "Video bearbeiten"
   articles:
+    form:
+      back: "Zurück"
     index:
       title: "Neuste Videos"
       new_article: "Video anlegen"
     new:
       title: "Neues Video anlegen"
-      back: "Zurück"
     edit:
       title: "Video bearbeiten"
   user:

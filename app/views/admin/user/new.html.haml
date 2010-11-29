@@ -1,7 +1,0 @@
-%h1= t('.title')
-
-= form_for @user, :url => user_index_path, :html => { :multipart => :true } do |f|
-  = render :partial => 'form', :locals => { :f => f }
-  .row
-    = f.submit "Profil anlegen!"
-  

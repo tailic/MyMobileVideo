@@ -1,4 +1,4 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\000034}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/\.rvm\/gems\/ruby-1\.9\.2-p0\/gems\/compass-0\.10\.5\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\000034}}
 html, body {
   margin: 0;
   padding: 0;
@@ -10,12 +10,12 @@ html, body {
   vertical-align: baseline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\000036}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/\.rvm\/gems\/ruby-1\.9\.2-p0\/gems\/compass-0\.10\.5\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\000036}}
 html {
   font-size: 100.01%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\0000316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/\.rvm\/gems\/ruby-1\.9\.2-p0\/gems\/compass-0\.10\.5\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\0000316}}
 div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
 pre, a, abbr, acronym, address, code, del, dfn, em, img,
 dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr {
@@ -29,7 +29,7 @@ dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, th
   vertical-align: baseline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\0000318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/\.rvm\/gems\/ruby-1\.9\.2-p0\/gems\/compass-0\.10\.5\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\0000318}}
 blockquote, q {
   margin: 0;
   padding: 0;
@@ -41,12 +41,12 @@ blockquote, q {
   vertical-align: baseline;
   quotes: "" "";
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\0000345}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/\.rvm\/gems\/ruby-1\.9\.2-p0\/gems\/compass-0\.10\.5\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\0000345}}
 blockquote:before, blockquote:after, q:before, q:after {
   content: "";
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\0000320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/\.rvm\/gems\/ruby-1\.9\.2-p0\/gems\/compass-0\.10\.5\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\0000320}}
 th, td, caption {
   margin: 0;
   padding: 0;
@@ -61,7 +61,7 @@ th, td, caption {
   vertical-align: middle;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/\.rvm\/gems\/ruby-1\.9\.2-p0\/gems\/compass-0\.10\.5\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\0000322}}
 table {
   margin: 0;
   padding: 0;
@@ -76,12 +76,12 @@ table {
   vertical-align: middle;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\0000324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/\.rvm\/gems\/ruby-1\.9\.2-p0\/gems\/compass-0\.10\.5\/frameworks\/blueprint\/stylesheets\/blueprint\/reset\/_utilities\.scss}line{font-family:\0000324}}
 a img {
   border: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/\.rvm\/gems\/ruby-1\.9\.2-p0\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000314}}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -101,47 +101,47 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   vertical-align: baseline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/\.rvm\/gems\/ruby-1\.9\.2-p0\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000317}}
 body {
   line-height: 1;
   color: black;
   background: white;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000319}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/\.rvm\/gems\/ruby-1\.9\.2-p0\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000319}}
 ol, ul {
   list-style: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000321}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/\.rvm\/gems\/ruby-1\.9\.2-p0\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000321}}
 table {
   border-collapse: separate;
   border-spacing: 0;
   vertical-align: middle;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000323}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/\.rvm\/gems\/ruby-1\.9\.2-p0\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000323}}
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000325}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/\.rvm\/gems\/ruby-1\.9\.2-p0\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000325}}
 q, blockquote {
   quotes: "" "";
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000396}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/\.rvm\/gems\/ruby-1\.9\.2-p0\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000396}}
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/\.rvm\/gems\/ruby-1\.9\.2-p0\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000327}}
 a img {
   border: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000343}}
 body {
   background-color: white;
   color: #333333;
@@ -151,22 +151,22 @@ body {
   margin: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000351}}
 a {
   color: #097be4;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000354}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000354}}
 a:visited {
   color: #097be4;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000356}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000356}}
 a:hover {
   color: #097be4;
   background-color: #c3ebf1;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000361}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000361}}
 h1 {
   font-size: 22px;
   margin-bottom: 10px;
@@ -178,18 +178,18 @@ h1 {
   font-weight: bold;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000366}}
 h2 {
   font-size: 18px;
   margin-bottom: 10px;
   overflow: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000369}}
 h2 span {
   display: inline;
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000371}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000371}}
 h2 a {
   display: inline;
   float: right;
@@ -198,13 +198,13 @@ h2 a {
   font-weight: bold;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000376}}
 h3 {
   font-size: 16px;
   margin-bottom: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000378}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000378}}
 h4 {
   font-size: 13px;
   font-weight: bold;
@@ -212,7 +212,7 @@ h4 {
   margin-bottom: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000380}}
 h5 {
   font-size: 13px;
   font-weight: bold;
@@ -220,7 +220,7 @@ h5 {
   margin-bottom: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000382}}
 h6 {
   font-size: 13px;
   font-weight: bold;
@@ -228,17 +228,17 @@ h6 {
   margin-bottom: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000385}}
 ol, ul {
   list-style: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000388}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000388}}
 #container {
   padding: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000391}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000391}}
 #header {
   background-color: #097be4;
   font-weight: bold;
@@ -246,12 +246,12 @@ ol, ul {
   font-size: 24px;
   padding: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000397}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000397}}
 #header a {
   color: white;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\0000399}}
 .header-login {
   display: inline;
   float: right;
@@ -274,7 +274,7 @@ ol, ul {
   cursor: pointer;
   margin-top: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003113}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003113}}
 .header-login:hover {
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #097be4), color-stop(49.254%, #097be4), color-stop(100%, #03a2f1));
   background-image: -moz-linear-gradient(top, #097be4 0%, #097be4 33%, #03a2f1 67%);
@@ -282,44 +282,44 @@ ol, ul {
   border: 1px solid #097be4;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003116}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003116}}
 #center {
   padding: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003119}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003119}}
 .new-videos {
   overflow: hidden;
   padding: 0 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003122}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003122}}
 .new-videos li {
   display: inline;
   float: left;
   height: 100px;
   margin: 10px 0 10px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003126}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003126}}
 .new-videos li .video {
   display: inline;
   float: left;
   width: 140px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003129}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003129}}
 .new-videos li .info {
   display: inline;
   float: left;
   width: 160px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003132}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003132}}
 .register-now {
   background-color: #eeeeee;
   line-height: 2em;
   padding: 0 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003137}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003137}}
 #footer {
   background-color: black;
   overflow: hidden;
@@ -327,12 +327,12 @@ ol, ul {
   padding: 5px 10px;
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003143}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003143}}
 #footer a {
   font-size: 14px;
   color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003146}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003146}}
 #footer .footer-links {
   margin: 0px auto;
   width: 280px;
@@ -344,7 +344,7 @@ ol, ul {
   overflow: hidden;
   *zoom: 1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/utilities\/lists\/_horizontal-list\.scss}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/\.rvm\/gems\/ruby-1\.9\.2-p0\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/utilities\/lists\/_horizontal-list\.scss}line{font-family:\0000351}}
 #footer .footer-links li {
   list-style-image: none;
   list-style-type: none;
@@ -355,16 +355,16 @@ ol, ul {
   padding-left: 4px;
   padding-right: 4px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/utilities\/lists\/_horizontal-list\.scss}line{font-family:\0000343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/\.rvm\/gems\/ruby-1\.9\.2-p0\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/utilities\/lists\/_horizontal-list\.scss}line{font-family:\0000343}}
 #footer .footer-links li:first-child, #footer .footer-links li.first {
   padding-left: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/\.rvm\/gems\/ruby-1\.8\.7-p299\@msv\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/utilities\/lists\/_horizontal-list\.scss}line{font-family:\0000344}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/\.rvm\/gems\/ruby-1\.9\.2-p0\/gems\/compass-0\.10\.5\/frameworks\/compass\/stylesheets\/compass\/utilities\/lists\/_horizontal-list\.scss}line{font-family:\0000344}}
 #footer .footer-links li:last-child, #footer .footer-links li.last {
   padding-right: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003151}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/steffen\/Dropbox\/Semester\%205\/Projekt\/git\/MyMobileVideo\/app\/stylesheets\/mobile\.sass}line{font-family:\00003151}}
 .copyright {
   display: block;
 }

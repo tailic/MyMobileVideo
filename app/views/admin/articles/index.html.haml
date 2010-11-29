@@ -10,13 +10,13 @@
   %tbody
   - for article in @articles
     %tr
-      %td{:width => '60px'}= image_tag article.asset.url(:thumb)
-      %td{:width => '330px'}= link_to article.title, article
+      %td{:width => '60px'}= image_tag(get_asset_thumb(article.asset.url, article.asset.original_filename, "thumb"))
+      %td{:width => '330px'}= link_to article.title, [:admin, article]
       %td{:width => '90px'}= l(article.created_at, :format => :custom)
       %td.options    
         = link_to "", [:admin, article] , {:class => 'icon show', :title => 'Anzeigen'}
         = link_to "", edit_admin_article_path(article), {:class => 'icon edit', :title => 'Bearbeiten'}
-        = button_to "", [:admin, article], :confirm => "Are you sure?", :method => :delete, :class => "icon delete"
+        = button_to "", [:admin, article], :confirm => "Are you sure?", :method => :delete, :class => "icon delete", :title => "Löschen"
               
 
        

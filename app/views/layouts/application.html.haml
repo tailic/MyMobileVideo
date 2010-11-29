@@ -34,6 +34,7 @@
           = yield
       #sidebar
         .content
+        
           - if user_signed_in?
             = link_to "Video hochladen!", new_article_path, :id => "add-article-button"
           = yield :sidebar
@@ -42,11 +43,6 @@
           %li= link_to 'Über uns', '/about'
           %li= raw('&nbsp;|&nbsp;')
           %li= link_to 'Impressum', '/impressum'
-          %li= raw('&nbsp;|&nbsp;')
-          - if mobile_device?
-            %li= link_to "Normale Seite", :mobile => 0
-          - else
-            %li= link_to "Mobile Seite", :mobile => 1
         .copyright= link_to raw('&copy; 2010 HAW Hamburg'), 'http://www.haw-hamburg.de/'
 
 

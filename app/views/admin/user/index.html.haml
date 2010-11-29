@@ -12,7 +12,7 @@
   - for user in @users
     %tr
       %td{:width => '60px'}= image_tag user.asset.url(:thumb)
-      %td{:width => '150px'}= user.name
+      %td{:width => '150px'}= link_to user.name, admin_user_path(user)
       %td{:width => '180px'}= user.email
       %td{:width => '60px'}= user.role
       %td.options    
