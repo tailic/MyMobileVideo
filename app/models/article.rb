@@ -30,6 +30,17 @@ class Article < ActiveRecord::Base
   validates_attachment_presence :asset
   validates_attachment_content_type :asset, :content_type => [ 'video/quicktime', 'video/x-flv', 'video/mp4', 'video/mpeg']
 
+  
+  define_index do
+    # fields
+    indexes title, :sortable => true
+    indexes body
+    
+    # attributes
+    has user_id, created_at, updated_at, views
+  end
+  
+  
   def tag_names
     @tag_names || tags.map(&:name).join(' ')
   end
@@ -42,6 +53,10 @@ class Article < ActiveRecord::Base
         tag = Tag.find_or_create_by_name(name)
       end
     end
+    self.tags += self.title.split(" ").map! do |word|
+      tag = Tag.find_or_create_by_name(word)
+    end
+  
   end
 
 

@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable,:registerable,:recoverable, :rememberable, :trackable, :validatable, :http_authenticatable#, :token_authenticatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :name, :password, :password_confirmation, :remember_me, :role, :asset
+  attr_accessible :email, :name, :password, :password_confirmation, :remember_me, :asset
   
   has_attached_file :asset, 
                     :url => "/system/:attachment/user/:id/:style/:basename.:extension",  

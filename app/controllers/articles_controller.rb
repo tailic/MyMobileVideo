@@ -22,6 +22,11 @@ class ArticlesController < ApplicationController
       format.json  { render :partial => 'articles/show.json' }
     end
   end
+  
+  def search 
+    @search = params[:search]
+    @articles = Article.search @search
+  end
 
   def new
     @article = Article.new

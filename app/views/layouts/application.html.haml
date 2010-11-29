@@ -34,6 +34,12 @@
           = yield
       #sidebar
         .content
+          = form_tag( :controller => "articles", :action => "search") do |f|
+            .row
+              Suchen
+              = text_field_tag :search
+            .action
+              = submit_tag "Suchen"
         
           - if user_signed_in?
             = link_to "Video hochladen!", new_article_path, :id => "add-article-button"
