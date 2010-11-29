@@ -8,3 +8,4 @@ Gemfile.lock
 .redcar
 .rvmrc
 public/system/**/**/*
+db/sphinx/*
