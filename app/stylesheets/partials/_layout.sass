@@ -9,8 +9,16 @@ $grid_image: "/images/grid.png"
   +container
   //+box-shadow(#333, 0px, -1px, 2px)
   // +showgrid($grid_image)
-#header, #footer
+  position: relative
+#header
   +column($blueprint-grid-columns, true)
+#footer
+  +column($blueprint-grid-columns, true)
+  position: fixed
+  bottom: 0px
+  display: block
+  float: none
+  z-index: 101
 #sidebar
   +column(8, true)
   background: rgba(255, 255, 255, 1)
