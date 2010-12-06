@@ -6,14 +6,15 @@ set :use_sudo, true
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-set :branch, "master"
+set :branch, "cloud"
 set :deploy_via, :remote_cache
 
 set :deploy_to, "/var/www/mmv"
 set :user, "webadmin"
+ssh_options[":keys"] = ["webadmin.key"]
 default_run_options[:pty] = true
 
-server "141.22.27.164", :app, :web, :db
+server "141.22.27.161", :app, :web, :db
 
 
 # If you are using Passenger mod_rails uncomment this:
