@@ -1,0 +1,8 @@
+= form_tag(:controller => "articles", :action => "create_comment") do |f|
+  .row
+    = hidden_field_tag  :article_id, @article.id
+  .row
+    Text:
+    = text_area_tag :text
+  .actions
+    = submit_tag

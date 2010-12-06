@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101122100959) do
+ActiveRecord::Schema.define(:version => 20101206103935) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -31,6 +31,14 @@ ActiveRecord::Schema.define(:version => 20101122100959) do
     t.integer "tag_id"
   end
 
+  create_table "comments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "article_id"
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
     t.integer  "attempts",   :default => 0
@@ -45,6 +53,19 @@ ActiveRecord::Schema.define(:version => 20101122100959) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
+
+  create_table "rates", :force => true do |t|
+    t.integer  "rater_id"
+    t.integer  "rateable_id"
+    t.string   "rateable_type"
+    t.integer  "stars",         :null => false
+    t.string   "dimension"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rates", ["rateable_id", "rateable_type"], :name => "index_rates_on_rateable_id_and_rateable_type"
+  add_index "rates", ["rater_id"], :name => "index_rates_on_rater_id"
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
@@ -63,9 +84,9 @@ ActiveRecord::Schema.define(:version => 20101122100959) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                               :default => "", :null => false
-    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
-    t.string   "password_salt",                       :default => "", :null => false
+    t.string   "email",                               :default => "",     :null => false
+    t.string   "encrypted_password",   :limit => 128, :default => "",     :null => false
+    t.string   "password_salt",                       :default => "",     :null => false
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
@@ -74,10 +95,11 @@ ActiveRecord::Schema.define(:version => 20101122100959) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "authentication_token"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.string   "role"
+    t.string   "role",                                :default => "user"
     t.string   "asset_file_name"
     t.string   "asset_content_type"
     t.integer  "asset_file_size"

@@ -16,9 +16,11 @@
 require 'paperclip' 
 
 class Article < ActiveRecord::Base
+  ajaxful_rateable :stars => 5
   validates_presence_of :title, :body
   attr_writer :tag_names
   after_save :assign_tags
+  has_many :comments
 
   belongs_to :user
   has_and_belongs_to_many :tags

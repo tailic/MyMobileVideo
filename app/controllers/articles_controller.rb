@@ -17,6 +17,8 @@ class ArticlesController < ApplicationController
     @articles = Article.all(:limit => 5)
     @article.views = @article.views + 1
     @article.save
+    asdf = @article.tags.clone
+    @releated = asdf.map!{|tag| tag.articles}.flatten.uniq
     respond_to do |format|
       format.html # show.html.haml
       format.json  { render :partial => 'articles/show.json' }
@@ -26,6 +28,10 @@ class ArticlesController < ApplicationController
   def search 
     @search = params[:search]
     @articles = Article.search @search
+    respond_to do |format|
+      format.html 
+      format.json  { render :partial => 'articles/index.json' }
+    end
   end
 
   def new
@@ -82,5 +88,15 @@ class ArticlesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def create_comment 
+    comment = Comment.create(:text => params[:text])
+    comment.user = current_user
+    art = Article.find(params[:article_id])
+    comment.article = art
+    comment.save
+    redirect_to(art)
+  end  
+
   
 end

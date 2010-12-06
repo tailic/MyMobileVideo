@@ -11,6 +11,7 @@ class Ability
       else
         can :read, :all
         if user.role?(:user)
+          can :create_comment, Article
           can :create, Article
           can :update, user
         end

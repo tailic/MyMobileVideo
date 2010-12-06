@@ -27,8 +27,17 @@
   %p= @article.body
   %h4 Tags:
   %p= @article.tags.map! { |k| "#{k.name}" }.join(", ")
+  
+  %h4 Kommentare
+  - @article.comments.each do |comment|
+    %p
+    = comment.text
   %p= link_to 'Zurück', articles_path
+
+
+Neuer Kommentar
+= render :partial => "comment"
 
 - content_for :sidebar do
   = render :partial => "shared/sidebar_login"
-  = render :partial => "shared/sidebar_videos", :locals => {:articles => @articles}
+  = render :partial => "shared/sidebar_videos", :locals => {:articles => @articles, :releated => @releated}
