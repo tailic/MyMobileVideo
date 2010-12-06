@@ -1,0 +1,19 @@
+login: &login
+  adapter: sqlite3
+
+development:
+  <<: *login
+  database: db/mmv_devel.sqlite3
+
+
+test:
+  <<: *login
+  database: db/mmv_test.sqlite3
+
+
+production:
+  <<: *login
+  database: db/mmv_prod.sqlite3
+
+
+

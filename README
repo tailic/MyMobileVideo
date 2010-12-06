@@ -1,8 +1,0 @@
-* HAW Projekt WS10/11 *
-Video Portal mit mobiler Anbindung
-
-** Starten des Convertierungs Worker **
-rake jobs:work
-
-** Install requirements **
-ffmpeg has to be installed
