@@ -35,7 +35,7 @@ class Article < ActiveRecord::Base
     # fields
     indexes title, :sortable => true
     indexes body
-    indexes tags
+    indexes tags.name, :as => :tags
     
     # attributes
     has user_id, created_at, updated_at, views
