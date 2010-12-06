@@ -8,12 +8,13 @@ set :scm, :git
 
 set :branch, "master"
 set :deploy_via, :remote_cache
+ssh_options[:keys] = ["webadmin.key"]
 
 set :deploy_to, "/var/www/mmv"
 set :user, "webadmin"
 default_run_options[:pty] = true
 
-server "141.22.27.164", :app, :web, :db
+server "141.22.27.161", :app, :web, :db
 
 
 # If you are using Passenger mod_rails uncomment this:
