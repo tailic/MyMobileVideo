@@ -5,9 +5,15 @@ indexer
 searchd
 {
   listen = 127.0.0.1:9312
+<<<<<<< HEAD
+  log = /home/steffen/Dropbox/Semester 5/Projekt/git/MyMobileVideo/log/searchd.log
+  query_log = /home/steffen/Dropbox/Semester 5/Projekt/git/MyMobileVideo/log/searchd.query.log
+  pid_file = /home/steffen/Dropbox/Semester 5/Projekt/git/MyMobileVideo/log/searchd.development.pid
+=======
   log = /home/niklas/MyMobileVideo/log/searchd.log
   query_log = /home/niklas/MyMobileVideo/log/searchd.query.log
   pid_file = /home/niklas/MyMobileVideo/log/searchd.development.pid
+>>>>>>> 3859de73ebd7332037517a4ffcc247da5cc216cd
 }
 
 source article_core_0

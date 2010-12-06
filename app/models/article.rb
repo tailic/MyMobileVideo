@@ -37,6 +37,7 @@ class Article < ActiveRecord::Base
     # fields
     indexes title, :sortable => true
     indexes body
+    indexes tags.name, :as => :tags
     
     # attributes
     has user_id, created_at, updated_at, views
@@ -51,7 +52,7 @@ class Article < ActiveRecord::Base
   
   def assign_tags
     if @tag_names
-      self.tags = @tag_names.split(/\s+/).map do |name|
+      self.tags = @tag_names.gsub(',', ' ').split(/\s+/).map do |name|
         tag = Tag.find_or_create_by_name(name)
       end
     end
