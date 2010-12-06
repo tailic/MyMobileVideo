@@ -11,7 +11,7 @@ set :deploy_via, :remote_cache
 
 set :deploy_to, "/var/www/mmv"
 set :user, "webadmin"
-ssh_options[":keys"] = ["webadmin.key"]
+ssh_options[:keys] = ["webadmin.key"]
 default_run_options[:pty] = true
 
 server "141.22.27.161", :app, :web, :db
