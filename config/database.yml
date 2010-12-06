@@ -1,19 +1,12 @@
 login: &login
-  adapter: sqlite3
-
-development:
-  <<: *login
-  database: db/mmv_devel.sqlite3
-
-
-test:
-  <<: *login
-  database: db/mmv_test.sqlite3
-
+  adapter: mysql2
+  encoding: utf8
+  username: myvideo
+  password: myvideo  
 
 production:
   <<: *login
-  database: db/mmv_prod.sqlite3
-
+  database: mmv
+  host: 192.168.0.67:3306
 
 
