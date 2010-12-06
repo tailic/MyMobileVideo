@@ -1,7 +1,8 @@
 .DS_Store
-config/database.yml
+config/database.yml.example
+config/development.sphinx.conf
 tmp/**/*
-log/*.log
+log/*
 svnignores.txt
 Gemfile.lock
 .svn
