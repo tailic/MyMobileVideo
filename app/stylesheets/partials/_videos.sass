@@ -7,6 +7,24 @@
 .description, .info
   padding: 5px
   
+.comments
+  border-top: 1px solid $light-grey
+  padding: 18px 5px 10px 5px
+  
+ol.all-comments
+  margin: 0 0 18px 0
+  +reset-list-style
+  li
+    +clearfix
+    margin-bottom: 18px
+  .author
+    +column(5)
+  .text
+    +column(9, true)
+  .date
+    font-size: 10px
+
+
 .info
   +clearfix
   .views

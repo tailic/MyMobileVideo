@@ -2,7 +2,7 @@
   .row
     = hidden_field_tag  :article_id, @article.id
   .row
-    Text:
     = text_area_tag :text
   .actions
-    = submit_tag
+    = submit_tag 'Kommentar abgeben!'
+    = link_to 'Zurück', articles_path

@@ -27,16 +27,22 @@
   %p= @article.body
   %h4 Tags:
   %p= @article.tags.map! { |k| "#{k.name}" }.join(", ")
-  
-  %h4 Kommentare
-  - @article.comments.each do |comment|
-    %p
-    = comment.text
-  %p= link_to 'Zurück', articles_path
 
+- if can? :create, Comment  
+  .comments
+    - unless @article.comments.blank?
+      %h4 Alle Kommentare
+      %ol.all-comments
+        - @article.comments.each do |comment|
+          %li
+            .author
+              = link_to comment.user.name, comment.user
+              %br
+              .date= l(comment.created_at, :format => :short)
+            .text= comment.text
 
-Neuer Kommentar
-= render :partial => "comment"
+    %h4 Neuer Kommentar
+    = render :partial => "comment"
 
 - content_for :sidebar do
   = render :partial => "shared/sidebar_login"
