@@ -7,6 +7,7 @@ login: &login
 production:
   <<: *login
   database: mmv
-  host: 192.168.0.67:3306
+  host: 192.168.0.67
+  port: 3306
 
 
