@@ -47,6 +47,14 @@ class Article < ActiveRecord::Base
     @tag_names || tags.map(&:name).join(' ')
   end
   
+  def path_mp4 
+    self.asset.url.split(".").first + ".mp4"
+  end
+  
+  def path_flv 
+    self.asset.url.split(".").first + ".flv"
+  end
+  
   private
   
   def assign_tags
