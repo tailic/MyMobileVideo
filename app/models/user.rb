@@ -28,6 +28,7 @@ class User < ActiveRecord::Base
   require 'paperclip' 
   has_many :articles
   has_many :comments
+  has_many :votes
   devise :database_authenticatable,:registerable,:recoverable, :rememberable, :trackable, :validatable, :http_authenticatable#, :token_authenticatable
   attr_accessible :email, :name, :password, :password_confirmation, :remember_me, :asset
   

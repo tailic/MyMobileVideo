@@ -21,6 +21,7 @@ class Article < ActiveRecord::Base
   after_save :assign_tags
   
   has_many :comments
+  has_many :votes
   belongs_to :user
   has_and_belongs_to_many :tags
 
