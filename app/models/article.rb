@@ -56,6 +56,14 @@ class Article < ActiveRecord::Base
     self.asset.url.split(".").first + ".flv"
   end
   
+  def vote_up 
+    self.votes.find_all{|vote| vote.value == "up"}.size
+  end
+  
+  def vote_down 
+    self.votes.find_all{|vote| vote.value == "down"}.size
+  end
+  
   private
   
   def assign_tags
