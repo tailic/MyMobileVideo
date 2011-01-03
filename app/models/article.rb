@@ -43,6 +43,15 @@ class Article < ActiveRecord::Base
     has user_id, created_at, updated_at, views
   end
   
+  def duration 
+    command = "ffmpeg -i " +  self.asset.path + " 2>&1 | grep 'Duration'| cut -d ' ' -f 4 | sed s/,//"
+		output = `#{command}`
+		if output =~ /([\d][\d]):([\d][\d]):([\d][\d]).([\d]+)/
+		  duration = (($1.to_i * 60 + $2.to_i) * 60 + $3.to_i) * 10 + $4.to_i
+	  end
+    "#{$2}:#{$3}"
+  end
+  
   
   def tag_names
     @tag_names || tags.map(&:name).join(' ')

@@ -1,5 +1,4 @@
 source 'http://rubygems.org'
-
 gem 'rails', '3.0.0'
 gem 'compass'
 gem 'haml'
@@ -14,11 +13,6 @@ gem 'nofxx-annotate'
 gem 'paperclip'
 gem 'delayed_job', '2.1.0.pre2'
 gem 'thinking-sphinx', '2.0.0', :require => 'thinking_sphinx'
-gem 'ajaxful_rating'
-gem "amazon-ec2", :require => "AWS"
-
-
-
 gem 'devise'
 gem 'cancan'
 

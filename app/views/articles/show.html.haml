@@ -23,6 +23,8 @@
     = link_to @article.user.name, user_path(@article.user)
     
 .description
+  %h4 Länge:
+  %p= @article.duration
   %h4 Beschreibung
   %p= @article.body
   %h4 Tags:

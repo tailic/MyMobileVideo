@@ -12,6 +12,8 @@
     "user_name":"<%=@article.user.name%>",
     "views":"<%=@article.views%>",
     "vote_up":"<%=@article.vote_up%>",
-    "vote_down":"<%=@article.vote_down%>"
+    "vote_down":"<%=@article.vote_down%>",
+    "thumb":"<%= get_asset_thumb(@article.asset.url, @article.asset.original_filename, "thumb")%>",
+    "duration":"<%= @article.duration%>"
   }
 }
