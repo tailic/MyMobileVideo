@@ -42,6 +42,7 @@
             = link_to truncate(article.title, :length => 30), article
           %span.date
             = l(article.created_at, :format => :custom)
+            
 
 - content_for :sidebar do
   = render :partial => "shared/sidebar_login"
