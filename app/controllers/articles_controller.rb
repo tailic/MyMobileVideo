@@ -89,6 +89,18 @@ class ArticlesController < ApplicationController
     end
   end
   
+  def vote 
+    vote =Vote.find_by_article_id_and_user_id(params[:article_id],current_user.id)
+    if vote
+      vote.value = params[:vote]
+    else
+      vote = Vote.create(:article_id => params[:article_id],:value => params[:vote])
+      vote.user = current_user
+    end
+    vote.save
+    redirect_to(Article.find(params[:article_id]))
+  end
+  
   def create_comment 
     comment = Comment.create(:text => params[:text])
     comment.user = current_user
