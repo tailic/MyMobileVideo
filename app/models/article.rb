@@ -42,7 +42,14 @@ class Article < ActiveRecord::Base
     # attributes
     has user_id, created_at, updated_at, views
   end
+
+  def show_up_votes
+    self.votes.find_all{|vote| vote.value == "up"}.size
+  end
   
+  def show_down_votes
+    self.votes.find_all{|vote| vote.value == "down"}.size
+  end  
   
   def tag_names
     @tag_names || tags.map(&:name).join(' ')
@@ -102,10 +109,8 @@ class Article < ActiveRecord::Base
       system "ffmpeg -i #{ asset.path } -ar 44100 -ab 128000 -s 640x480 -vcodec mpeg4 -aspect 16:9 -r 25 -qscale 8 -f mp4 -y #{ mp4 }"
       grab_screenshot_from_video
     end
-  end
+  end  
  
-  private
-
   def grab_screenshot_from_video
     logger.debug "Trying to grab a screenshot from #{asset.path}"
     flv = File.join(File.dirname(asset.path), "thumb135x100.jpg")
@@ -114,7 +119,5 @@ class Article < ActiveRecord::Base
     flv = File.join(File.dirname(asset.path), "thumb290x200.jpg")
     File.open(flv, 'w')
     system "ffmpeg -i #{ asset.path } -s 290x200 -vframes 10 -f image2 -an #{flv}"
-
   end
-
 end
