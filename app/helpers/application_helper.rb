@@ -6,5 +6,5 @@ module ApplicationHelper
       when "medium" then "thumb290x200.jpg"
     end
     return path + thumb_size
-  end
+  end  
 end
