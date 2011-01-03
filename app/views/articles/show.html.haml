@@ -12,27 +12,33 @@
   %script
     = "flowplayer('player_#{@article.id}', '/videos/flowplayer-3.2.5.swf', {clip:{autoPlay: false}});"
     
-.info
-  %span.views
-    %b
-      Views:
-    = @article.views
-  %span.user
-    %b
-      Created by:
-    = link_to @article.user.name, user_path(@article.user)
+.video-content
+  .info
+    .user
+      %b
+        Erstellt von:
+      = link_to @article.user.name, user_path(@article.user)
+    .views
+      %b
+        Views:
+      = @article.views
+    .tags
+      %b Tags:
+      = @article.tags.map! { |k| "#{k.name}" }.join(", ")
+    .vote
+      = render :partial => "vote"
     
-.description
-  %h4 Beschreibung
-  %p= @article.body
-  %h4 Tags:
-  %p= @article.tags.map! { |k| "#{k.name}" }.join(", ")
-  %p
-    = render :partial => "vote"
+  .description
+    %h3 Länge:
+    %p= @article.duration
+    %h3 Beschreibung
+    %p= @article.body
 
 
-.comments
-  - unless @article.comments.blank?
+
+
+- unless @article.comments.blank?
+  .comments
     %h4 Alle Kommentare
     %ol.all-comments
       - @article.comments.each do |comment|
@@ -42,8 +48,9 @@
             %br
             .date= l(comment.created_at, :format => :short)
           .text= comment.text
-  - if can? :create, Comment  
-    z%h4 Neuer Kommentar
+- if can? :create, Comment
+  .new-comment
+    %h4 Neuer Kommentar
     = render :partial => "comment"
 
 - content_for :sidebar do

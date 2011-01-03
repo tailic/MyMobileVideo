@@ -1,18 +1,15 @@
-Bewertung:
 = form_tag(:controller => "articles", :action => "vote") do |f|
-  .row
     = hidden_field_tag  :article_id, @article.id
-  .row
     = hidden_field_tag  :vote, "up"
-  .actions
-    = submit_tag 'Like!'
-= @article.votes.find_all{|vote| vote.value == "up"}.size
+    = submit_tag '', :class => "like"
     
 = form_tag(:controller => "articles", :action => "vote") do |f|
-  .row
     = hidden_field_tag  :article_id, @article.id
-  .row
     = hidden_field_tag  :vote, "down"
-  .actions
-    = submit_tag 'Hate!'
-= @article.votes.find_all{|vote| vote.value == "down"}.size
+    = submit_tag '', :class => "dislike"
+    
+= "Gefällt "
+%span.like-text= @article.show_up_votes
+= " und "
+%span.dislike-text= @article.show_down_votes
+= " nicht"

@@ -4,12 +4,11 @@
     height: 380px
     display: block
     margin-bottom: 20px
-.description, .info
-  padding: 5px
+.video-content
+  +clearfix
   
-.comments
-  border-top: 1px solid $light-grey
-  padding: 18px 5px 10px 5px
+.comments, .new-comment
+  padding: 18px 10px 10px 10px
   
 ol.all-comments
   margin: 0 0 18px 0
@@ -25,12 +24,16 @@ ol.all-comments
     font-size: 10px
 
 
-.info
-  +clearfix
-  .views
-    +float-left
-  .user
-    +float-right
+.video-content > .info
+  +column(6, true)
+  border-right: 1px dotted $light-grey
+  padding: 10px
+
+.video-content > .description
+  +column(8, true)
+  padding: 10px
+  
+
 .sidebar-videos
   li
     overflow: hidden
@@ -78,11 +81,10 @@ ol.all-comments
 .new-videos
   +clearfix
   margin-bottom: 18px
+  
   li
-    +float-left
-    width: 135px
-    margin-right: 20px
-    margin-bottom: 10px
+    +column(4,true)
+    margin: 0 0 18px 5px
     &:nth-child(4)
       margin-right: 0px
   .image
@@ -104,3 +106,29 @@ ol.all-comments
       width: 125px
   span
     display: inline-block
+
+input[type="submit"].like, input[type="submit"].dislike
+  border: none
+  &:hover
+    border: none
+input[type="submit"].like, input[type="submit"].like:hover
+  background: transparent image_url('like.png') no-repeat top left
+  
+input[type="submit"].dislike, input[type="submit"].dislike:hover
+  background: transparent image_url('dislike.png') no-repeat top left
+
+.vote
+  +clearfix
+  margin: 10px 0 0 0
+  line-height: 2em
+  form
+    +float-left
+    margin-right: 5px
+    
+.like-text
+  color: $green
+  font-weight: bold
+.dislike-text
+  color: $red
+  font-weight: bold
+  
