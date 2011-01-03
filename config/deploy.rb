@@ -18,6 +18,7 @@ ssh_options[:keys] = ["~/webadmin.key"]
 namespace :deploy do
    task :start do 
      run "cd #{current_path} && rake RAILS_ENV=production"
+     run "rake db:migrate"
    end
    task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
