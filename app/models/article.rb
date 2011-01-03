@@ -77,22 +77,19 @@ class Article < ActiveRecord::Base
     end
   
   end
-
-
   
-  # This method creates the ffmpeg command that we'll be using
-  def convert
+
+  def checkVideo
     logger.debug "testing the status of the current file #{self.asset_file_name} #{self.asset_content_type} #{self.asset_file_name} #{self.asset_file_name}"
+    #FLV
     if self.asset_file_name.include? ".flv"
-      mp4 = File.join(File.dirname(asset.path), "#{self.asset_file_name.gsub(".flv",'').gsub(".FLV",'')}.mp4")
-      File.open(mp4, 'w')
-      system "ffmpeg -i #{ asset.path } -ar 44100 -ab 128000 -s 640x480 -vcodec mpeg4 -acodec libfaac -aspect 16:9 -r 25 -qscale 8 -f mp4 -y #{ mp4 }"
-      grab_screenshot_from_video
+      convert("640x480", "mpeg4", "libfaac", 8, "mp4")
+      grab_screenshot
+    #MP4
     elsif self.asset_file_name.include? ".mp4"
       flv = File.join(File.dirname(asset.path), "#{self.asset_file_name.gsub(".mp4",'').gsub(".MP4",'')}.flv")
-      File.open(flv, 'w')
       system "ffmpeg -i #{ asset.path }  -ar 22050 -ab 192000 -s 480x360 -vcodec flv -acodec libmp3lame -r 25 -qscale 8 -f flv -y #{ flv }"
-      grab_screenshot_from_video
+      grab_screenshot
     else
       flv = File.join(File.dirname(asset.path), "#{self.asset_file_name.gsub(".mov",'').gsub(".mp4",'').gsub(".MOV",'').gsub(".MP4",'').gsub(".avi",'').gsub(".AVI",'')}.flv")
       File.open(flv, 'w')
@@ -100,13 +97,20 @@ class Article < ActiveRecord::Base
       mp4 = File.join(File.dirname(asset.path), "#{self.asset_file_name.gsub(".mov",'').gsub(".flv",'').gsub(".MOV",'').gsub(".FLV",'').gsub(".avi",'').gsub(".AVI",'')}.mp4")
       File.open(mp4, 'w')
       system "ffmpeg -i #{ asset.path } -ar 44100 -ab 128000 -s 640x480 -vcodec mpeg4 -acodec libfaac -aspect 16:9 -r 25 -qscale 8 -f mp4 -y #{ mp4 }"
-      grab_screenshot_from_video
+      grab_screenshot
     end
   end
+
+def convert(size, vcodec, acodec, qscale, vformat)
+  outfile = File.join(File.dirname(asset.path), "#{self.asset_file_name.gsub(/(\.).*$/,vformat)}")
+  File.open(outfile, 'w')
+  system "ffmpeg -i #{ asset.path } -s #{ size } -vcodec #{ vcodec } -acodec #{ acodec } -r 29.97 -qscale #{ qscale } -f #{ vformat } -y #{ outfile }"
+  grab_screenshot
+end
  
   private
 
-  def grab_screenshot_from_video
+  def grab_screenshot
     logger.debug "Trying to grab a screenshot from #{asset.path}"
     flv = File.join(File.dirname(asset.path), "thumb135x100.jpg")
     File.open(flv, 'w')
@@ -114,7 +118,6 @@ class Article < ActiveRecord::Base
     flv = File.join(File.dirname(asset.path), "thumb290x200.jpg")
     File.open(flv, 'w')
     system "ffmpeg -i #{ asset.path } -s 290x200 -vframes 1 -f image2 -an #{flv}"
-
   end
 
 end
