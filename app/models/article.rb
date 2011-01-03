@@ -128,5 +128,8 @@ class Article < ActiveRecord::Base
     flv = File.join(File.dirname(asset.path), "thumb290x200.jpg")
     File.open(flv, 'w')
     system "ffmpeg -i #{ asset.path } -s 290x200 -vframes 10 -f image2 -an #{flv}"
+    flv = File.join(File.dirname(asset.path), "thumb600x380.jpg")
+    File.open(flv, 'w')
+    system "ffmpeg -i #{ asset.path } -s 600x380 -vframes 10 -f image2 -an #{flv}"
   end
 end

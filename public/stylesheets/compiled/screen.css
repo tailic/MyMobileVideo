@@ -352,43 +352,45 @@ ol.all-comments .date {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/partials\/_videos\.sass}line{font-family:\00003112}}
 input[type="submit"].like, input[type="submit"].dislike {
   border: none;
+  width: 24px;
+  height: 24px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/partials\/_videos\.sass}line{font-family:\00003114}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/partials\/_videos\.sass}line{font-family:\00003116}}
 input[type="submit"].like:hover, input[type="submit"].dislike:hover {
   border: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/partials\/_videos\.sass}line{font-family:\00003116}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/partials\/_videos\.sass}line{font-family:\00003118}}
 input[type="submit"].like, input[type="submit"].like:hover {
   background: transparent url('/images/like.png?1294055110') no-repeat top left;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/partials\/_videos\.sass}line{font-family:\00003119}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/partials\/_videos\.sass}line{font-family:\00003121}}
 input[type="submit"].dislike, input[type="submit"].dislike:hover {
   background: transparent url('/images/dislike.png?1294055115') no-repeat top left;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/partials\/_videos\.sass}line{font-family:\00003122}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/partials\/_videos\.sass}line{font-family:\00003124}}
 .vote {
   overflow: hidden;
   *zoom: 1;
   margin: 10px 0 0 0;
   line-height: 2em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/partials\/_videos\.sass}line{font-family:\00003126}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/partials\/_videos\.sass}line{font-family:\00003128}}
 .vote form {
   display: inline;
   float: left;
   margin-right: 5px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/partials\/_videos\.sass}line{font-family:\00003130}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/partials\/_videos\.sass}line{font-family:\00003132}}
 .like-text {
   color: #07b168;
   font-weight: bold;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/partials\/_videos\.sass}line{font-family:\00003133}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/burza\/Dropbox\/my_projects\/Code\/MyMobileVideo\/app\/stylesheets\/partials\/_videos\.sass}line{font-family:\00003135}}
 .dislike-text {
   color: #cc0025;
   font-weight: bold;
