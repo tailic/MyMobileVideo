@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    @articles = Article.all(:limit => 5)
+    @articles = Article.all(:limit => 3)
     @article.views = @article.views + 1
     @article.save
     asdf = @article.tags.clone

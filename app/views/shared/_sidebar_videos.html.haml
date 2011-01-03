@@ -1,6 +1,6 @@
 .sidebar-videos
   %h2 
-    %span Aktuelle Videos
+    Aktuelle Videos
     = link_to 'mehr videos', root_path
   %ol
     - articles.each do |article|
@@ -11,7 +11,7 @@
           = link_to truncate(article.title, :length => 80), article
           
   %h2 
-    %span Ähnliche Videos
+    Ähnliche Videos
   %ol
     - releated.each do |article|
       %li
