@@ -45,7 +45,7 @@
             .date= l(comment.created_at, :format => :short)
           .text= comment.text
   - if can? :create, Comment  
-    z%h4 Neuer Kommentar
+    %h4 Neuer Kommentar
     = render :partial => "comment"
 
 - content_for :sidebar do
