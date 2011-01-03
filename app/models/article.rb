@@ -53,7 +53,7 @@ class Article < ActiveRecord::Base
 		if output =~ /([\d][\d]):([\d][\d]):([\d][\d]).([\d]+)/
 		  duration = (($1.to_i * 60 + $2.to_i) * 60 + $3.to_i) * 10 + $4.to_i
 	  end
-    "#{$2}:#{$3}"
+    "#{$2}:#{$3} Min."
   end
     
   def show_down_votes

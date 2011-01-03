@@ -18,6 +18,9 @@
       %b
         Erstellt von:
       = link_to @article.user.name, user_path(@article.user)
+    .duration
+      %b Länge:
+      = @article.duration
     .views
       %b
         Views:
@@ -29,8 +32,6 @@
       = render :partial => "vote"
     
   .description
-    %h3 Länge:
-    %p= @article.duration
     %h3 Beschreibung
     %p= @article.body
 
