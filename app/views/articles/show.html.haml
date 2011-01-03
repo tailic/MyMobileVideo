@@ -8,7 +8,7 @@
       = button_to "", @article, :confirm => "Are you sure?", :method => :delete, :class => "icon delete"
   
 .video
-  = link_to '', @article.asset.url, :id => "player_#{@article.id}"
+  = link_to '', @article.path_flv, :id => "player_#{@article.id}"
   %script
     = "flowplayer('player_#{@article.id}', '/videos/flowplayer-3.2.5.swf', {clip:{autoPlay: false}});"
     
@@ -27,16 +27,26 @@
   %p= @article.body
   %h4 Tags:
   %p= @article.tags.map! { |k| "#{k.name}" }.join(", ")
-  
-  %h4 Kommentare
-  - @article.comments.each do |comment|
-    %p
-    = comment.text
-  %p= link_to 'Zurück', articles_path
+  %p
+    Bewertung
+    = @article.votes.find_all{|vote| vote.value == "up"}.size
+  = render :partial => "vote"
 
 
-Neuer Kommentar
-= render :partial => "comment"
+.comments
+  - unless @article.comments.blank?
+    %h4 Alle Kommentare
+    %ol.all-comments
+      - @article.comments.each do |comment|
+        %li
+          .author
+            = link_to comment.user.name, comment.user
+            %br
+            .date= l(comment.created_at, :format => :short)
+          .text= comment.text
+  - if can? :create, Comment  
+    z%h4 Neuer Kommentar
+    = render :partial => "comment"
 
 - content_for :sidebar do
   = render :partial => "shared/sidebar_login"

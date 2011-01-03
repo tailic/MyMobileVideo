@@ -13,6 +13,7 @@ set :deploy_to, "/var/www/mmv"
 set :user, "webadmin"
 ssh_options[:keys] = ["~/webadmin.key"]
 
+
 # Start/Restart Tasks
 namespace :deploy do
    task :start do 

@@ -16,12 +16,12 @@
 require 'paperclip' 
 
 class Article < ActiveRecord::Base
-  ajaxful_rateable :stars => 5
   validates_presence_of :title, :body
   attr_writer :tag_names
   after_save :assign_tags
+  
   has_many :comments
-
+  has_many :votes
   belongs_to :user
   has_and_belongs_to_many :tags
 
@@ -46,6 +46,22 @@ class Article < ActiveRecord::Base
   
   def tag_names
     @tag_names || tags.map(&:name).join(' ')
+  end
+  
+  def path_mp4 
+    self.asset.url.split(".").first + ".mp4"
+  end
+  
+  def path_flv 
+    self.asset.url.split(".").first + ".flv"
+  end
+  
+  def vote_up 
+    self.votes.find_all{|vote| vote.value == "up"}.size
+  end
+  
+  def vote_down 
+    self.votes.find_all{|vote| vote.value == "down"}.size
   end
   
   private
