@@ -29,9 +29,11 @@
       = render :partial => "vote"
     
   .description
+    %h3 Länge:
+    %p= @article.duration
     %h3 Beschreibung
     %p= @article.body
-  
+
 
 
 - unless @article.comments.blank?
