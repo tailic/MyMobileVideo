@@ -130,4 +130,3 @@ class Article < ActiveRecord::Base
     system "ffmpeg -i #{ asset.path } -s 290x200 -vframes 1 -f image2 -an #{flv}"
   end
 end
- 
