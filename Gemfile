@@ -17,5 +17,5 @@ gem 'thinking-sphinx', '2.0.0', :require => 'thinking_sphinx'
 gem 'devise'
 gem 'cancan'
 gem 'sqlite3-ruby', :require => 'sqlite3'
-gem 'deamons'
+#gem 'deamons'
 
