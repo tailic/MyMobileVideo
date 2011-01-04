@@ -6,11 +6,13 @@
       = link_to '', edit_article_path(@article), {:class => 'icon edit', :title => 'Bearbeiten'}
     - if can? :delete, @article
       = button_to "", @article, :confirm => "Are you sure?", :method => :delete, :class => "icon delete"
+// get_asset_thumb(path, filename, size)
+// image_tag(get_asset_thumb(article.asset.url, article.asset.original_filename, "thumb"))
+.video{:style => "background-image:url('#{get_asset_thumb(@article.asset.url, @article.asset.original_filename, "large")}')"}
+  = link_to image_tag(get_asset_thumb(@article.asset.url, @article.asset.original_filename, "large")), @article.path_flv, :id => "player_#{@article.id}"  
   
-.video
-  = link_to '', @article.path_flv, :id => "player_#{@article.id}"
   %script
-    = "flowplayer('player_#{@article.id}', '/videos/flowplayer-3.2.5.swf', {clip:{autoPlay: false}});"
+    = "flowplayer('player_#{@article.id}', '/videos/flowplayer-3.2.5.swf', {clip:{autoPlay: true}});"
     
 .video-content
   .info
