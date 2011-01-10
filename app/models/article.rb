@@ -27,7 +27,10 @@ class Article < ActiveRecord::Base
 
   has_attached_file :asset,
                     :url => "/system/:attachment/videos/:id/:style/:basename.:extension",  
-                    :path => ":rails_root/public/system/:attachment/videos/:id/:style/:basename.:extension"                      
+                    :path => ":rails_root/public/system/:attachment/videos/:id/:style/:basename.:extension",   
+                    :storage => :s3,
+                    :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+                    :bucket => 'mmv'
 
   validates_attachment_presence :asset
   validates_attachment_content_type :asset, :content_type => [ 'video/quicktime', 'video/x-flv', 'video/mp4', 'video/mpeg']

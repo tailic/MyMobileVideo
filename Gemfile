@@ -15,8 +15,7 @@ gem 'delayed_job', '2.1.0.pre2'
 gem 'thinking-sphinx', '2.0.0', :require => 'thinking_sphinx'
 gem 'devise'
 gem 'cancan'
-
-
+gem 'right_aws'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
