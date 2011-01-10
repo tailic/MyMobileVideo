@@ -1,4 +1,10 @@
 .video
+  position: relative
+  .video-play
+    position: absolute
+    top: 150px
+    left: 260px
+    cursor: pointer
   a
     width: 600px
     height: 380px
@@ -35,6 +41,8 @@ ol.all-comments
   
 
 .sidebar-videos
+  ol
+    margin-bottom: 18px
   li
     overflow: hidden
     border-bottom: 1px dotted $light-grey
@@ -109,6 +117,8 @@ ol.all-comments
 
 input[type="submit"].like, input[type="submit"].dislike
   border: none
+  width: 24px
+  height: 24px
   &:hover
     border: none
 input[type="submit"].like, input[type="submit"].like:hover

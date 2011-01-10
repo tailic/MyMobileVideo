@@ -53,7 +53,7 @@ class Article < ActiveRecord::Base
 		if output =~ /([\d][\d]):([\d][\d]):([\d][\d]).([\d]+)/
 		  duration = (($1.to_i * 60 + $2.to_i) * 60 + $3.to_i) * 10 + $4.to_i
 	  end
-    "#{$2}:#{$3}"
+    "#{$2}:#{$3} Min."
   end
     
   def show_down_votes
@@ -126,7 +126,15 @@ class Article < ActiveRecord::Base
     File.open(flv, 'w')
     system "ffmpeg -i #{ asset.path } -s 135x100 -vframes 1 -f image2 -an #{flv}"
     flv = File.join(File.dirname(asset.path), "thumb290x200.jpg")
+<<<<<<< HEAD
     File.open(flv, 'w')    
     system "ffmpeg -i #{ asset.path } -s 290x200 -vframes 1 -f image2 -an #{flv}"
+=======
+    File.open(flv, 'w')
+    system "ffmpeg -i #{ asset.path } -s 290x200 -vframes 10 -f image2 -an #{flv}"
+    flv = File.join(File.dirname(asset.path), "thumb600x380.jpg")
+    File.open(flv, 'w')
+    system "ffmpeg -i #{ asset.path } -s 600x380 -vframes 10 -f image2 -an #{flv}"
+>>>>>>> master
   end
 end
