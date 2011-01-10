@@ -45,6 +45,9 @@ class Article < ActiveRecord::Base
     # attributes
     has user_id, created_at, updated_at, views
   end
+<<<<<<< HEAD
+  
+=======
 
   def show_up_votes
     self.votes.find_all{|vote| vote.value == "up"}.size
@@ -62,6 +65,7 @@ class Article < ActiveRecord::Base
   def show_down_votes
     self.votes.find_all{|vote| vote.value == "down"}.size
   end    
+>>>>>>> 1cb5fb400635417abe9ddf44308bde86d4f69116
   
   def tag_names
     @tag_names || tags.map(&:name).join(' ')
@@ -94,45 +98,36 @@ class Article < ActiveRecord::Base
     self.tags += self.title.split(" ").map! do |word|
       tag = Tag.find_or_create_by_name(word)
     end
+  end
   
+
+  def process_video
+    logger.debug "current file #{self.asset_file_name} #{self.asset_content_type} #{self.asset_file_name} #{self.asset_file_name}"
+      convert("640x480", "mpeg4", "libfaac", 8, "mp4")
+      convert("640x480", "flv", "libmp3lame", 8, "flv")
+      grab_screenshot
   end
 
-
-  
-  # This method creates the ffmpeg command that we'll be using
-  def convert
-    logger.debug "testing the status of the current file #{self.asset_file_name} #{self.asset_content_type} #{self.asset_file_name} #{self.asset_file_name}"
-    if self.asset_file_name.include? ".flv"
-      mp4 = File.join(File.dirname(asset.path), "#{self.asset_file_name.gsub(".flv",'').gsub(".FLV",'')}.mp4")
-      File.open(mp4, 'w')
-      system "ffmpeg -i #{ asset.path } -ar 44100 -ab 128000 -s 640x480 -vcodec mpeg4 -aspect 16:9 -r 25 -qscale 8 -f mp4 -y #{ mp4 }"
-      grab_screenshot_from_video
-    elsif self.asset_file_name.include? ".mp4"
-      flv = File.join(File.dirname(asset.path), "#{self.asset_file_name.gsub(".mp4",'').gsub(".MP4",'')}.flv")
-      File.open(flv, 'w')
-      system "ffmpeg -i #{ asset.path }  -ar 22050 -ab 192000 -s 480x360 -vcodec flv -r 25 -qscale 8 -f flv -y #{ flv }"
-      grab_screenshot_from_video
-    else
-      flv = File.join(File.dirname(asset.path), "#{self.asset_file_name.gsub(".mov",'').gsub(".mp4",'').gsub(".MOV",'').gsub(".MP4",'').gsub(".avi",'').gsub(".AVI",'')}.flv")
-      File.open(flv, 'w')
-      system "ffmpeg -i #{ asset.path }  -ar 22050 -ab 192000 -s 480x360 -vcodec flv -r 25 -qscale 8 -f flv -y #{ flv }"
-      mp4 = File.join(File.dirname(asset.path), "#{self.asset_file_name.gsub(".mov",'').gsub(".flv",'').gsub(".MOV",'').gsub(".FLV",'').gsub(".avi",'').gsub(".AVI",'')}.mp4")
-      File.open(mp4, 'w')
-      system "ffmpeg -i #{ asset.path } -ar 44100 -ab 128000 -s 640x480 -vcodec mpeg4 -aspect 16:9 -r 25 -qscale 8 -f mp4 -y #{ mp4 }"
-      grab_screenshot_from_video
-    end
-  end  
+def convert(size, vcodec, acodec, qscale, vformat)
+  outfile = File.join(File.dirname(asset.path), "#{self.asset_file_name + "." + vformat}")
+  File.open(outfile, 'w')
+  system "ffmpeg -i #{ asset.path } -s #{ size } -vcodec #{ vcodec } -acodec #{ acodec } -r 29.97 -qscale #{ qscale } -f #{ vformat } -y #{ outfile }"
+  grab_screenshot
+end
  
-  def grab_screenshot_from_video
+  private
+
+  def grab_screenshot
     logger.debug "Trying to grab a screenshot from #{asset.path}"
     flv = File.join(File.dirname(asset.path), "thumb135x100.jpg")
     File.open(flv, 'w')
-    system "ffmpeg -i #{ asset.path } -s 135x100 -vframes 10 -f image2 -an #{flv}"
+    system "ffmpeg -i #{ asset.path } -s 135x100 -vframes 1 -f image2 -an #{flv}"
     flv = File.join(File.dirname(asset.path), "thumb290x200.jpg")
     File.open(flv, 'w')
-    system "ffmpeg -i #{ asset.path } -s 290x200 -vframes 10 -f image2 -an #{flv}"
+    system "ffmpeg -i #{ asset.path } -s 290x200 -vframes 1 -f image2 -an #{flv}"
     flv = File.join(File.dirname(asset.path), "thumb600x380.jpg")
     File.open(flv, 'w')
-    system "ffmpeg -i #{ asset.path } -s 600x380 -vframes 10 -f image2 -an #{flv}"
+    system "ffmpeg -i #{ asset.path } -s 600x380 -vframes 1 -f image2 -an #{flv}"
   end
+
 end

@@ -55,7 +55,7 @@ class ArticlesController < ApplicationController
     @article.views = 0
     respond_to do |format|
       if @article.save
-        @article.delay.convert
+        @article.delay.process_video
         format.html { redirect_to(@article, :notice => 'Article was successfully created.') }
         format.json  { render :json => @article, :status => :created, :location => @article }
       else
