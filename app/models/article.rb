@@ -42,6 +42,9 @@ class Article < ActiveRecord::Base
     # attributes
     has user_id, created_at, updated_at, views
   end
+<<<<<<< HEAD
+  
+=======
 
   def show_up_votes
     self.votes.find_all{|vote| vote.value == "up"}.size
@@ -59,6 +62,7 @@ class Article < ActiveRecord::Base
   def show_down_votes
     self.votes.find_all{|vote| vote.value == "down"}.size
   end    
+>>>>>>> 1cb5fb400635417abe9ddf44308bde86d4f69116
   
   def tag_names
     @tag_names || tags.map(&:name).join(' ')
@@ -118,6 +122,9 @@ end
     flv = File.join(File.dirname(asset.path), "thumb290x200.jpg")
     File.open(flv, 'w')
     system "ffmpeg -i #{ asset.path } -s 290x200 -vframes 1 -f image2 -an #{flv}"
+    flv = File.join(File.dirname(asset.path), "thumb600x380.jpg")
+    File.open(flv, 'w')
+    system "ffmpeg -i #{ asset.path } -s 600x380 -vframes 1 -f image2 -an #{flv}"
   end
 
 end
