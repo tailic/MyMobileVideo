@@ -15,7 +15,7 @@ Service::Application.routes.draw do
     resources :user
   end
   
-  
+  match '/:page' => 'pages#show'
 
   match '/videos' =>'articles#index'
   match '/videos/:id' =>'articles#show'
