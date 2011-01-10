@@ -45,10 +45,7 @@ class Article < ActiveRecord::Base
     # attributes
     has user_id, created_at, updated_at, views
   end
-<<<<<<< HEAD
-=======
   
->>>>>>> master
 
   def show_up_votes
     self.votes.find_all{|vote| vote.value == "up"}.size
@@ -65,11 +62,7 @@ class Article < ActiveRecord::Base
     
   def show_down_votes
     self.votes.find_all{|vote| vote.value == "down"}.size
-<<<<<<< HEAD
-  end    
-=======
   end      
->>>>>>> master
   
   def tag_names
     @tag_names || tags.map(&:name).join(' ')
