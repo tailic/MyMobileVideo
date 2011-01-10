@@ -27,7 +27,10 @@ class Article < ActiveRecord::Base
 
   has_attached_file :asset,
                     :url => "/system/:attachment/videos/:id/:style/:basename.:extension",  
-                    :path => ":rails_root/public/system/:attachment/videos/:id/:style/:basename.:extension"                      
+                    :path => ":rails_root/public/system/:attachment/videos/:id/:style/:basename.:extension"#,   
+                    #:storage => :s3,
+                    #:s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+                    #:bucket => 'mmv'
 
   validates_attachment_presence :asset
   validates_attachment_content_type :asset, :content_type => [ 'video/quicktime', 'video/x-flv', 'video/mp4', 'video/mpeg']
@@ -42,6 +45,10 @@ class Article < ActiveRecord::Base
     # attributes
     has user_id, created_at, updated_at, views
   end
+<<<<<<< HEAD
+=======
+  
+>>>>>>> master
 
   def show_up_votes
     self.votes.find_all{|vote| vote.value == "up"}.size
@@ -58,7 +65,11 @@ class Article < ActiveRecord::Base
     
   def show_down_votes
     self.votes.find_all{|vote| vote.value == "down"}.size
+<<<<<<< HEAD
   end    
+=======
+  end      
+>>>>>>> master
   
   def tag_names
     @tag_names || tags.map(&:name).join(' ')

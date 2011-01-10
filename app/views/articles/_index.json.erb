@@ -1,19 +1,21 @@
 [<% @articles.each do |article|%>
 {
   "article":{
-    "id":<%= article.id %>,
-    "title":"<%= article.title %>",
-    "body":"<%= article.body %>",
-    "exclusive":"<%= article.exclusive%>",
-    "created_at":"<%= article.created_at%>",
-    "url":"<%=article.asset.url%>",
-    "url_flv":"<%=article.path_flv%>",
-    "url_mp4":"<%=article.path_mp4%>",
-    "user_id":"<%=article.user.id%>",
-    "user_name":"<%=article.user.name%>",
-    "views":"<%=article.views%>",
-    "vote_up":"<%=article.vote_up%>",
-    "vote_down":"<%=article.vote_down%>"
+    "id":<%= @article.id %>,
+    "title":"<%= @article.title %>",
+    "body":"<%= @article.body %>",
+    "exclusive":"<%= @article.exclusive%>",
+    "created_at":"<%= @article.created_at%>",
+    "url":"<%=@article.asset.url%>",
+    "url_flv":"<%=@article.path_flv%>",
+    "url_mp4":"<%=@article.path_mp4%>",
+    "user_id":"<%=@article.user.id%>",
+    "user_name":"<%=@article.user.name%>",
+    "views":"<%=@article.views%>",
+    "vote_up":"<%=@article.vote_up%>",
+    "vote_down":"<%=@article.vote_down%>",
+    "thumb":"<%= get_asset_thumb(@article.asset.url, @article.asset.original_filename, "thumb")%>",
+    "duration":"<%= @article.duration%>"
   }
 }
 <%= @articles.last == article ? " " : ","%>
