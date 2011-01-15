@@ -96,10 +96,12 @@ class Article < ActiveRecord::Base
   
 
   def process_video
-    logger.debug "current file #{self.asset_file_name} #{self.asset_content_type} #{self.asset_file_name} #{self.asset_file_name}"
+    logger.debug "Test current file #{self.asset_file_name} #{self.asset_content_type} #{self.asset_file_name} #{self.asset_file_name}"
       convert("640x480", "mpeg4", "libfaac", 8, "mp4")
       convert("640x480", "flv", "libmp3lame", 8, "flv")
-      grab_screenshot
+      grab_screenshot("135x100")
+      grab_screenshot("290x200")
+      grab_screenshot("600x380")
   end
 
 
@@ -107,23 +109,15 @@ def convert(size, vcodec, acodec, qscale, vformat)
   outfile = File.join(File.dirname(asset.path), "#{self.asset_file_name + "." + vformat}")
   File.open(outfile, 'w')
   system "ffmpeg -i #{ asset.path } -s #{ size } -vcodec #{ vcodec } -acodec #{ acodec } -r 29.97 -qscale #{ qscale } -f #{ vformat } -y #{ outfile }"
-  grab_screenshot
 end
  
   private
 
-  def grab_screenshot
+  def grab_screenshot(size)
     logger.debug "Trying to grab a screenshot from #{asset.path}"
-    flv = File.join(File.dirname(asset.path), "thumb135x100.jpg")
+    flv = File.join(File.dirname(asset.path), "thumb#{ size }.jpg")
     File.open(flv, 'w')
-    system "ffmpeg -i #{ asset.path } -s 135x100 -vframes 1 -f image2 -an #{flv}"
-    flv = File.join(File.dirname(asset.path), "thumb290x200.jpg")
-    File.open(flv, 'w')
-    system "ffmpeg -i #{ asset.path } -s 290x200 -vframes 1 -f image2 -an #{flv}"
-    flv = File.join(File.dirname(asset.path), "thumb600x380.jpg")
-    File.open(flv, 'w')
-    system "ffmpeg -i #{ asset.path } -s 600x380 -vframes 1 -f image2 -an #{flv}"
-
+    system "ffmpeg -i #{ asset.path } -s #{ size } -vframes 1 -f image2 -an #{flv}"
   end
 
 end
