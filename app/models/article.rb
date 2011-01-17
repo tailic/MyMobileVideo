@@ -99,7 +99,7 @@ class Article < ActiveRecord::Base
     logger.debug "Test current file #{self.asset_file_name} #{self.asset_content_type} #{self.asset_file_name} #{self.asset_file_name}"
       convert("640x480", "mpeg4", "libfaac", 8, "mp4")
       convert("640x480", "flv", "libmp3lame", 8, "flv")
-      grab_screenshot("136x100")
+      grab_screenshot("145x100")
       grab_screenshot("290x200")
       grab_screenshot("600x380")
   end
