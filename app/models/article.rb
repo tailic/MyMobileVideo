@@ -30,7 +30,7 @@ class Article < ActiveRecord::Base
                     :path => ":rails_root/public/system/:attachment/videos/:id/:style/:basename.:extension"
 
   validates_attachment_presence :asset
-  validates_attachment_content_type :asset, :content_type => [ 'video/quicktime', 'video/x-flv', 'video/mp4', 'video/mpeg']
+
 
   
   define_index do
