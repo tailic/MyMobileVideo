@@ -114,7 +114,7 @@ end
   private
 
   def grab_screenshot(size)
-    logger.debug "Trying to grab a screenshot from #{asset.path}"
+    logger.debug "Trying to grab a screenshot from #{asset.path} size#{size}"
     flv = File.join(File.dirname(asset.path), "thumb#{ size }.jpg")
     File.open(flv, 'w')
     system "ffmpeg -i #{ asset.path } -s #{ size } -vframes 1 -f image2 -an #{flv}"
